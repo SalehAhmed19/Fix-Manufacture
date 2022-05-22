@@ -19,10 +19,8 @@ const Signup = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [createUserWitEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  //   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   let signInErrorMessage;
   const navigate = useNavigate();
-  //   const [token] = useToken(user || gUser);
   if (loading || gLoading) {
     return <Loading />;
   }
@@ -41,7 +39,6 @@ const Signup = () => {
   const onSubmit = async (data) => {
     console.log(data);
     await createUserWitEmailAndPassword(data.email, data.password);
-    // await updateProfile({ displayName: data.name });
   };
   return (
     <div className="flex items-center justify-center h-screen">

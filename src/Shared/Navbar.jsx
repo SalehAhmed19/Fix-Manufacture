@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { LoginIcon } from "@heroicons/react/outline";
+import { LoginIcon } from "@heroicons/react/outline";
 
 const Navbar = () => {
   return (
@@ -28,10 +28,10 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="">Spare Parts</Link>
+              <Link to="/parts">Spare Parts</Link>
             </li>
             <li>
-              <Link to="">Blogs</Link>
+              <Link to="/blogs">Blogs</Link>
             </li>
           </ul>
         </div>
@@ -45,13 +45,13 @@ const Navbar = () => {
             <Link to="/parts">Spare Parts</Link>
           </li>
           <li>
-            <Link to="">Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         <Link to="/login" className="btn btn-ghost">
-          Login {/* <LoginIcon className="h-6" /> */}
+          Login <LoginIcon className="h-6" />
         </Link>
         <Link to="/signup" className="btn btn-accent">
           Registration

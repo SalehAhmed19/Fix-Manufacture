@@ -1,4 +1,5 @@
 import React from "react";
+import { ShoppingCartIcon } from "@heroicons/react/solid";
 
 const SparePart = ({ part }) => {
   return (
@@ -21,7 +22,9 @@ const SparePart = ({ part }) => {
           <span className="font-bold">Price: </span>&euro;{part.price}
         </h5>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary w-full">
+            Buy Now <ShoppingCartIcon />
+          </button>
         </div>
       </div>
     </div>
