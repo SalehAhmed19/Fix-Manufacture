@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import { LoginIcon } from "@heroicons/react/outline";
 
 const Navbar = () => {
   return (
@@ -34,7 +35,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl text-primary">
           FixManufacturer
         </Link>
       </div>
@@ -49,8 +50,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="" className="btn btn-ghost">
-          Login
+        <Link to="/login" className="btn btn-ghost">
+          Login {/* <LoginIcon className="h-6" /> */}
         </Link>
         <Link to="" className="btn btn-accent">
           Registration
