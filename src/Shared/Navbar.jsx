@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LoginIcon } from "@heroicons/react/outline";
+import { LoginIcon, LogoutIcon } from "@heroicons/react/outline";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
   return (
     <div className="navbar">
       <div className="navbar-start">
@@ -50,9 +54,15 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn btn-ghost">
-          Login <LoginIcon className="h-6" />
-        </Link>
+        {user ? (
+          <button onClick={signOut(auth)} className="btn btn-ghost">
+            Logout <LogoutIcon className="h-6" />
+          </button>
+        ) : (
+          <Link to="/login" className="btn btn-ghost">
+            Login <LoginIcon className="h-6" />
+          </Link>
+        )}
         <Link to="/signup" className="btn btn-accent">
           Registration
         </Link>

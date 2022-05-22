@@ -1,5 +1,6 @@
 import React from "react";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 const SparePart = ({ part }) => {
   return (
@@ -22,9 +23,9 @@ const SparePart = ({ part }) => {
           <span className="font-bold">Price: </span>&euro;{part.price}
         </h5>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary w-full">
-            Buy Now <ShoppingCartIcon className="h-6" />
-          </button>
+          <Link to="/purchase" className="btn btn-primary w-full">
+            Purchase <ShoppingCartIcon className="h-6" />
+          </Link>
         </div>
       </div>
     </div>
