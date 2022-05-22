@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import Loading from "../../Shared/Loading";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const {
@@ -8,8 +15,31 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [useSignInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  //   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  let signInErrorMessage;
+  const navigate = useNavigate();
+  //   const [token] = useToken(user || gUser);
+  if (loading || gLoading) {
+    return <Loading />;
+  }
+  if (user) {
+    navigate("/appointment");
+  }
+  if (error || gError) {
+    signInErrorMessage = (
+      <p>
+        <small className="text-red-500">
+          {error?.message || gError?.message}
+        </small>
+      </p>
+    );
+  }
   const onSubmit = async (data) => {
     console.log(data);
+    await signInWithEmailAndPassword(data.email, data.password);
   };
   return (
     <div>
@@ -84,7 +114,7 @@ const Login = () => {
                   )}
                 </label>
               </div>
-              {/* {signInErrorMessage} */}
+              {signInErrorMessage}
               <input
                 className="btn btn-primary w-full"
                 type="submit"
@@ -94,14 +124,14 @@ const Login = () => {
             <p className="text-center">
               <small>
                 New to FixManufacturer?{" "}
-                <Link to="/login" className="text-primary">
+                <Link to="/signup" className="text-primary">
                   Login
                 </Link>
               </small>
             </p>
             <div className="divider">OR</div>
             <button
-              /* onClick={() => signInWithGoogle()} */
+              onClick={() => signInWithGoogle()}
               className="btn btn-primary btn-outline"
             >
               Continue with Google
