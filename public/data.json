@@ -18,7 +18,7 @@
       "img": "https://i.ibb.co/Sn0FzC2/ip7-battery-1960np.jpg"
     },
     {
-      "_id": 1,
+      "_id": 3,
       "name": "Apple iPhone 7 - Battery 1960 mAh FixPremium",
       "des": "The replacement battery for Apple iPhone 7, which you can use if the battery on your device needs to be replaced, whether it has stopped charging to 100%, is damaged, or has become obsolete over time. FixPremium spare part.",
       "min_order": 100,
@@ -27,7 +27,7 @@
       "img": "https://i.ibb.co/0sckMQD/ip6sbattery.jpg"
     },
     {
-      "_id": 3,
+      "_id": 4,
       "name": "Apple iPhone 7 - LCD Adhesive (Black)",
       "des": "LCD adhesive designed for Apple iPhone 7. Sticker is suitable for re-gluing components, or restoring water resistance (depending on the device) after dismantling your mobile phone. OEM spare part.",
       "min_order": 100,
@@ -36,7 +36,7 @@
       "img": "https://i.ibb.co/Y4gGb86/ip7lcdadhesive.jpg"
     },
     {
-      "_id": 4,
+      "_id": 5,
       "name": "Apple iPhone 6, 6S, 7 - Battery Adhesive",
       "des": "Sticker under battery designed for Apple iPhone 6, 6S, 7. Sticker is suitable for re-gluing components, or restoring water resistance (depending on the device) after dismantling your mobile phone. OEM spare part.",
       "min_order": 100,
@@ -45,7 +45,7 @@
       "img": "https://i.ibb.co/3Y0qc8q/IP66-S7-Battery-Adhesive.jpg"
     },
     {
-      "_id": 5,
+      "_id": 6,
       "name": "Apple iPhone X - Battery 2716mAh",
       "des": "The replacement battery for Apple iPhone X, which you can use if the battery on your device needs to be replaced, whether it has stopped charging to 100%, is damaged, or has become obsolete over time. OEM spare part.",
       "min_order": 100,
@@ -54,7 +54,7 @@
       "img": "https://i.ibb.co/nCMzQcH/ipxbtt.jpg"
     },
     {
-      "_id": 6,
+      "_id": 7,
       "name": "Samsung Galaxy A40 A405F, A71 A715F, A70 A705F, A51 A515F, S20 FE G780F - Mainboard Connector - 3710-004285",
       "des": "Connector for Samsung Galaxy A40 A405F, A71 A715F, A70 A705F, A51 A515F, which you will use if the original connector is clogged with dust or damaged, has stopped working and needs to be replaced. Original spare part.",
       "min_order": 100,
@@ -63,7 +63,7 @@
       "img": "https://i.ibb.co/sFgKcrL/ssga40port.jpg"
     },
     {
-      "_id": 7,
+      "_id": 8,
       "name": "Samsung Galaxy A50 A505F, Samsung Galaxy A30s A307F - Battery EB-BA505ABU 4000 mAh",
       "des": "The replacement battery for Samsung Galaxy A50 A505F, Samsung Galaxy A30s A307F, which you can use if the battery on your device needs to be replaced, whether it has stopped charging to 100%, is damaged, or has become obsolete over time. OEM spare part.",
       "min_order": 100,
@@ -72,7 +72,7 @@
       "img": "https://i.ibb.co/qRSwx4p/ssga50btt.jpg"
     },
     {
-      "_id": 8,
+      "_id": 9,
       "name": "Samsung Galaxy Grand i9082, Tab A 10.1 2016 T580, T585 - Charging Connector - 3722-003700",
       "des": "Charging connector for Samsung Galaxy Grand i9082, Tab A 10.1 2016 T580, T585. If your device has stopped charging, use this component to repair the charging connector. Original spare part.",
       "min_order": 100,
@@ -81,7 +81,7 @@
       "img": "https://i.ibb.co/w01J7P5/ssgcarging.jpg"
     },
     {
-      "_id": 9,
+      "_id": 10,
       "name": "Samsung Galaxy A5 A510F, A3 A310F, J3 J320F, J5 J5108, A7 A750F, A40 A405F, A50 A505F, M20 M205F, A70 (A705F), A30s A307F, A20 A205F, M51 M515F, M31 M315F, M21 - Ear-Speaker - 3009-001705",
       "des": "Originality: Original. Part  is the original part, delivered by the device producer. Part is of the highest possible quality on the market and 100% corresponds to the one which is in the device since production. To find out more about originality, read our blog where we focus on originality in more detail.",
       "min_order": 100,
@@ -90,7 +90,7 @@
       "img": "https://i.ibb.co/mzRyHq9/ssgearspeaker.jpg"
     },
     {
-      "_id": 10,
+      "_id": 11,
       "name": "Samsung Galaxy A32 5G A326B - LCD Display + Touch Screen (Black) OEM",
       "des": "Replacement LCD display with touch glass designed for Samsung Galaxy A32 5G A326B, color: black. A replacement set to use if your flood screen is scratched, cracked, or otherwise damaged. The set includes an LCD display and a touch glass. OEM spare parts.",
       "min_order": 100,
