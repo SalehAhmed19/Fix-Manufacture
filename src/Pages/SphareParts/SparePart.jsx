@@ -23,7 +23,7 @@ const SparePart = ({ part }) => {
         </h5>
         <div className="card-actions justify-end">
           <button className="btn btn-primary w-full">
-            Buy Now <ShoppingCartIcon />
+            Buy Now <ShoppingCartIcon className="h-6" />
           </button>
         </div>
       </div>
