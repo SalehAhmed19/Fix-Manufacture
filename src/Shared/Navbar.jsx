@@ -38,7 +38,27 @@ const Navbar = () => {
             <li>
               <Link to="/blogs">Blogs</Link>
             </li>
+            {user && (
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            )}
+            {user ? (
+              <button onClick={() => signOut(auth)} className="btn btn-ghost">
+                Logout <LogoutIcon className="h-6" />
+              </button>
+            ) : (
+              <Link to="/login" className="btn btn-ghost">
+                Login <LoginIcon className="h-6" />
+              </Link>
+            )}
+            {!user && (
+              <Link to="/signup" className="btn btn-accent">
+                Registration
+              </Link>
+            )}
           </ul>
+          <div className="navbar-end"></div>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl text-primary">
           FixManufacturer
@@ -52,9 +72,12 @@ const Navbar = () => {
           <li>
             <Link to="/blogs">Blogs</Link>
           </li>
+          {user && (
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          )}
         </ul>
-      </div>
-      <div className="navbar-end">
         {user ? (
           <button onClick={() => signOut(auth)} className="btn btn-ghost">
             Logout <LogoutIcon className="h-6" />
@@ -65,10 +88,28 @@ const Navbar = () => {
           </Link>
         )}
         {!user && (
-          <Link to="/signup" className="btn btn-accent">
+          <Link to="/signup" className="btn btn-ghost">
             Registration
           </Link>
         )}
+      </div>
+      <div className="navbar-end">
+        <label for="my-drawer-2" class="btn btn-ghost drawer-button lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   );
