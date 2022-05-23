@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  console.log(user);
   return (
     <div className="navbar">
       <div className="navbar-start">
@@ -55,7 +56,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <button onClick={signOut(auth)} className="btn btn-ghost">
+          <button onClick={() => signOut(auth)} className="btn btn-ghost">
             Logout <LogoutIcon className="h-6" />
           </button>
         ) : (

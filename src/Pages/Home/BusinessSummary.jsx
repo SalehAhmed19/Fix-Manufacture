@@ -22,7 +22,7 @@ const BusinessSummary = () => {
   ];
   return (
     <div className="pb-5 px-5 bg-accent">
-      <h2 className="font-bold text-center text-secondary text-3xl py-3">
+      <h2 className="font-bold text-center text-secondary text-3xl py-3 text-primary">
         Business Summary
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

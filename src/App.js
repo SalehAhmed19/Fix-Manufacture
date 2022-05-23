@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
-import ReqireAuth from "./Pages/Login/RequireAuth";
+import RequireAuth from "./Pages/Login/RequireAuth";
 import Signup from "./Pages/Login/Signup";
 import Purchase from "./Pages/Purchase/Purchase";
 import SphareParts from "./Pages/SphareParts/SphareParts";
@@ -15,13 +15,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/parts" element={<SphareParts />}></Route>
+        <Route path="/parts/" element={<SphareParts />}></Route>
         <Route
-          path="/purchase"
+          path="/purchase/:_id"
           element={
-            <ReqireAuth>
+            <RequireAuth>
               <Purchase />
-            </ReqireAuth>
+            </RequireAuth>
           }
         ></Route>
         <Route path="/login" element={<Login />}></Route>

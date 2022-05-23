@@ -1,8 +1,12 @@
 import React from "react";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Part = ({ part }) => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(`/purchase/${part._id}`);
+  };
   return (
     <div className="card card-compact w-full bg-base-100 shadow-xl">
       <figure>
@@ -23,9 +27,9 @@ const Part = ({ part }) => {
           <span className="font-bold">Price: </span>&euro;{part.price}
         </h5>
         <div className="card-actions justify-end">
-          <Link to="/purchase" className="btn btn-primary w-full">
+          <button onClick={handleNavigate} className="btn btn-primary w-full">
             Purchase <ShoppingCartIcon className="h-6" />
-          </Link>
+          </button>
         </div>
       </div>
     </div>
