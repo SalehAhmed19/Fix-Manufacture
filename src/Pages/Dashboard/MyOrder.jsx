@@ -8,7 +8,9 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:4000/orders?email=${user.email}`)
+      fetch(
+        `https://stark-basin-47833.herokuapp.com/orders?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }
