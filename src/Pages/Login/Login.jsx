@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import google from "../../assets/icons/google.png";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
@@ -135,6 +136,7 @@ const Login = () => {
             className="btn btn-primary btn-outline"
           >
             Continue with Google
+            <img className="h-6 ml-2" src={google} alt="" />
           </button>
         </div>
       </div>

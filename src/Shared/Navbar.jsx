@@ -64,9 +64,11 @@ const Navbar = () => {
             Login <LoginIcon className="h-6" />
           </Link>
         )}
-        <Link to="/signup" className="btn btn-accent">
-          Registration
-        </Link>
+        {!user && (
+          <Link to="/signup" className="btn btn-accent">
+            Registration
+          </Link>
+        )}
       </div>
     </div>
   );
