@@ -8,9 +8,9 @@ const SparePart = ({ part }) => {
     navigate(`/purchase/${part._id}`);
   };
   return (
-    <div className="card card-compact w-full bg-base-100 shadow-xl">
+    <div className="card card-compact w-3/4 md:w-full bg-base-100 shadow-xl mx-auto">
       <figure>
-        <img className="w-1/2" src={part.img} alt="Shoes" />
+        <img className=" w-28 md:w-1/2" src={part.img} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{part.name}</h2>

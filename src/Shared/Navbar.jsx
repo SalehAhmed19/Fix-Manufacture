@@ -94,7 +94,10 @@ const Navbar = () => {
         )}
       </div>
       <div className="navbar-end">
-        <label for="my-drawer-2" class="btn btn-ghost drawer-button lg:hidden">
+        <label
+          htmlFor="my-drawer-2"
+          className="btn btn-ghost drawer-button lg:hidden"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
