@@ -10,20 +10,7 @@ const useOrders = () => {
   const [user] = useAuthState(auth);
   //   const navigate = useNavigate();
   useEffect(() => {
-    // const getOrder = async () => {
-    //   const url = `http://localhost:4000/orders?email=${user.email}`;
-    //   try {
-    //     const { data } = await axios.get(url);
-    //     setOrders(data);
-    //   } catch (error) {
-    //     if (error) {
-    //       signOut(auth);
-    //       navigate("/login");
-    //     }
-    //   }
-    // };
-    // getOrder();
-    fetch(`http://localhost:4000/orders?email=${user.email}`)
+    fetch(`https://stark-basin-47833.herokuapp.com/orders?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user]);

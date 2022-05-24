@@ -1,6 +1,7 @@
 import React from "react";
 import useOrders from "../../Hooks/useOrders";
 import OrdersRow from "./OrdersRow";
+import { RefreshIcon } from "@heroicons/react/outline";
 
 const MyOrder = () => {
   const [orders] = useOrders();
@@ -20,7 +21,7 @@ const MyOrder = () => {
               <th>QtY</th>
               <th>
                 <button onClick={reload} className="btn btn-xs btn-accent">
-                  Refresh
+                  Refresh <RefreshIcon className="h-4 ml-3" />
                 </button>
               </th>
             </tr>

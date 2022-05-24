@@ -9,7 +9,7 @@ const OrdersRow = ({ order, index }) => {
     const agree = window.confirm("Are you sure you want to delete");
     if (agree) {
       console.log("deleted", _id);
-      fetch(`http://localhost:4000/orders/${_id}`, {
+      fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
