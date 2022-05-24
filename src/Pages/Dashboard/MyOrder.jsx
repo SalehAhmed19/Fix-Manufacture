@@ -1,7 +1,6 @@
 import React from "react";
 import useOrders from "../../Hooks/useOrders";
 import OrdersRow from "./OrdersRow";
-import { RefreshIcon } from "@heroicons/react/outline";
 
 const MyOrder = () => {
   const [orders, setOrders] = useOrders();
