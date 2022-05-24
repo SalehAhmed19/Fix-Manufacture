@@ -5,9 +5,6 @@ import { RefreshIcon } from "@heroicons/react/outline";
 
 const MyOrder = () => {
   const [orders, setOrders] = useOrders();
-  const reload = () => {
-    window.location.reload();
-  };
   return (
     <div>
       <h2 className="text-xl font-bold">My Order</h2>
@@ -19,11 +16,7 @@ const MyOrder = () => {
               <th>Product ID</th>
               <th>Product</th>
               <th>QtY</th>
-              <th>
-                <button onClick={reload} className="btn btn-xs btn-accent">
-                  Refresh <RefreshIcon className="h-4 ml-3" />
-                </button>
-              </th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

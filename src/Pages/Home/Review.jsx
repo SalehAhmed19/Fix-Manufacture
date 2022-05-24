@@ -3,8 +3,8 @@ import React from "react";
 const Review = ({ review }) => {
   return (
     <div className="flex justify-center items-center border my-3 p-5 w-3/4 rounded-md mx-auto">
-      <div class="avatar">
-        <div class="w-12 rounded-full">
+      <div className="avatar">
+        <div className="w-12 rounded-full">
           <img src="https://api.lorem.space/image/face?hash=92310" alt="" />
         </div>
       </div>

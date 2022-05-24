@@ -3,18 +3,14 @@ import { toast } from "react-toastify";
 // import useOrders from "../../Hooks/useOrders";
 
 const OrdersRow = ({ order, index, orders, setOrders }) => {
-  //   const [orders, setOrders] = useOrders();
-  console.log(orders);
   const handleDelete = (_id) => {
     const agree = window.confirm("Are you sure you want to delete");
     if (agree) {
-      console.log("deleted", _id);
       fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             const remainingOrders = orders.filter((order) => order._id !== _id);
             setOrders(remainingOrders);
@@ -32,7 +28,7 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
       <td>
         <button
           onClick={() => handleDelete(order._id)}
-          className="btn btn-xs btn-error"
+          className="btn btn-xs btn-error bg-red-500 text-white"
         >
           Delete
         </button>

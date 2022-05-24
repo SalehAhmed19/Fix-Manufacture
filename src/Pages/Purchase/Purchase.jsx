@@ -52,11 +52,9 @@ const Purchase = () => {
     }).then((res) =>
       res.json().then((data) => {
         toast.success("Successfully placed the order!");
-        console.log(data);
         event.target.reset();
       })
     );
-    console.log(name, email, phone, quantity);
     const url = `https://stark-basin-47833.herokuapp.com/parts/${_id}`;
     fetch(url, {
       method: "PUT",
