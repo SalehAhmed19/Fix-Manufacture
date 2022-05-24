@@ -25,6 +25,7 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
       <td>{order.productId.slice(0, 6) + "..."}</td>
       <td>{order.product.slice(0, 15) + "..."}</td>
       <td>{order.quantity}</td>
+      <td>&euro;{order.price}</td>
       <td>
         <button
           onClick={() => handleDelete(order._id)}
@@ -32,6 +33,9 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
         >
           Delete
         </button>
+      </td>
+      <td>
+        <button className="btn btn-xs btn-primary text-white">Payment</button>
       </td>
     </tr>
   );

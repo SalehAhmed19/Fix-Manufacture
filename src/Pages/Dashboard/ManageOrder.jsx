@@ -23,6 +23,7 @@ const ManageOrder = () => {
               <th></th>
               <th>ProductId</th>
               <th>Quantity</th>
+              <th>Price</th>
               <th>Payment</th>
               <th></th>
             </tr>

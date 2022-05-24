@@ -6,6 +6,7 @@ const ManageOrderRow = ({ order, index }) => {
       <th>{index + 1}</th>
       <td>{order._id.slice(0, 7) + "..."}</td>
       <td>{order.quantity}</td>
+      <td>&euro;{order.price}</td>
       <td></td>
       <td>
         <button className="btn btn-xs btn-primary">Delivered</button>

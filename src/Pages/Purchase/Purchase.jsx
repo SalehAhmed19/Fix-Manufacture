@@ -26,6 +26,7 @@ const Purchase = () => {
       productId: part._id,
       product: part.name,
       quantity: quantity,
+      price: part.price * quantity,
     };
     if (quantity < part.min_order) {
       return toast.error("You can not order less than 100");
