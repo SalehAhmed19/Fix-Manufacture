@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
+import React from "react";
+import useOrders from "../../Hooks/useOrders";
 import OrdersRow from "./OrdersRow";
 
 const MyOrder = () => {
-  const [orders, setOrders] = useState([]);
-  const [user] = useAuthState(auth);
-  useEffect(() => {
-    if (user) {
-      fetch(
-        `https://stark-basin-47833.herokuapp.com/orders?email=${user.email}`
-      )
-        .then((res) => res.json())
-        .then((data) => setOrders(data));
-    }
-  }, [user]);
+  const [orders] = useOrders();
+  const reload = () => {
+    window.location.reload();
+  };
   return (
     <div>
-      <h2 className="text-xl font-bold">My Order{orders.length}</h2>
+      <h2 className="text-xl font-bold">My Order</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -26,7 +18,11 @@ const MyOrder = () => {
               <th>Product ID</th>
               <th>Product</th>
               <th>QtY</th>
-              <th></th>
+              <th>
+                <button onClick={reload} className="btn btn-xs btn-accent">
+                  Refresh
+                </button>
+              </th>
             </tr>
           </thead>
           <tbody>

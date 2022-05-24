@@ -9,7 +9,7 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   const [part, setPart] = useState({});
   useEffect(() => {
-    fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`)
+    fetch(`http://localhost:4000/parts/${_id}`)
       .then((res) => res.json())
       .then((data) => setPart(data));
   }, []);
@@ -45,7 +45,7 @@ const Purchase = () => {
       quantity: availabeQuantity,
     };
 
-    fetch(`https://stark-basin-47833.herokuapp.com/orders`, {
+    fetch(`http://localhost:4000/orders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(order),
@@ -57,7 +57,7 @@ const Purchase = () => {
       })
     );
     console.log(name, email, phone, quantity);
-    const url = `https://stark-basin-47833.herokuapp.com/parts/${_id}`;
+    const url = `http://localhost:4000/parts/${_id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },
