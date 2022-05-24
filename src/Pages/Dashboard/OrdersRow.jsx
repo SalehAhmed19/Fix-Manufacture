@@ -1,9 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
-import useOrders from "../../Hooks/useOrders";
+// import useOrders from "../../Hooks/useOrders";
 
-const OrdersRow = ({ order, index }) => {
-  const [orders, setOrders] = useOrders();
+const OrdersRow = ({ order, index, orders, setOrders }) => {
+  //   const [orders, setOrders] = useOrders();
   console.log(orders);
   const handleDelete = (_id) => {
     const agree = window.confirm("Are you sure you want to delete");

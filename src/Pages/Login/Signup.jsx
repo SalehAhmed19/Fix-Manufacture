@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 // import useToken from "../../Hooks/useToken";
 import Loading from "../../Shared/Loading";
+import useToken from "../../Hooks/useToken";
 
 const Signup = () => {
   const {
@@ -25,11 +26,11 @@ const Signup = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  //   const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
   if (loading || gLoading || updating) {
     return <Loading />;
   }
-  if (user || gUser) {
+  if (token) {
     navigate(from, { replace: true });
   }
   if (error || gError || updateError) {

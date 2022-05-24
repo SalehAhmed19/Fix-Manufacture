@@ -4,7 +4,7 @@ import OrdersRow from "./OrdersRow";
 import { RefreshIcon } from "@heroicons/react/outline";
 
 const MyOrder = () => {
-  const [orders] = useOrders();
+  const [orders, setOrders] = useOrders();
   const reload = () => {
     window.location.reload();
   };
@@ -32,6 +32,8 @@ const MyOrder = () => {
                 key={order._id}
                 order={order}
                 index={index}
+                setOrders={setOrders}
+                orders={orders}
               ></OrdersRow>
             ))}
           </tbody>
