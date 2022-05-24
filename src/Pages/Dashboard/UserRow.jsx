@@ -1,7 +1,11 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const UserRow = ({ user, index, refetch }) => {
+  const navigate = useNavigate();
   const email = user.email;
   const makeAdmin = () => {
     fetch(`https://stark-basin-47833.herokuapp.com/users/admin/${email}`, {
@@ -10,10 +14,19 @@ const UserRow = ({ user, index, refetch }) => {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 403) {
+          signOut(auth);
+          navigate("/");
+          toast.error("Failed to made an admin");
+        }
+        return res.json();
+      })
       .then((data) => {
-        refetch();
-        toast.success(`Successfully made an admin: ${user.email}`);
+        if (data.modifiedCount > 0) {
+          refetch();
+          return toast.success(`Successfully made an admin: ${user.email}`);
+        }
       });
   };
   return (
