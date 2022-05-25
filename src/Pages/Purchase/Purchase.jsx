@@ -25,7 +25,7 @@ const Purchase = () => {
       phone: phone,
       productId: part._id,
       product: part.name,
-      quantity: quantity,
+      available_quantity: quantity,
       price: part.price * quantity,
     };
     if (quantity < part.min_order) {
@@ -36,14 +36,15 @@ const Purchase = () => {
         `We've ${part.available_quantity} unit on our stock. You can't order above our available quantity`
       );
     }
-    const availabeQuantity = part.available_quantity - quantity;
+    const availabeQuantity =
+      parseInt(part.available_quantity) - parseInt(quantity);
     const update = {
       name: name,
       email: email,
       phone: phone,
       productId: part._id,
       product: part.name,
-      quantity: availabeQuantity,
+      available_quantity: availabeQuantity,
     };
 
     fetch(`https://stark-basin-47833.herokuapp.com/orders`, {
