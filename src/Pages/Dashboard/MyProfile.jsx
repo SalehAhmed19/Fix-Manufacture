@@ -5,8 +5,6 @@ import ProfileUpdateModal from "./ProfileUpdateModal";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const [info, setInfo] = useState(null);
-  console.log(user);
   return (
     <div className="ml-5 lg:ml-0">
       <h2 className="text-xl font-bold">My Profile</h2>
@@ -32,7 +30,7 @@ const MyProfile = () => {
           </label>
         </div>
       </div>
-      <ProfileUpdateModal setInfo={setInfo} />
+      <ProfileUpdateModal />
     </div>
   );
 };

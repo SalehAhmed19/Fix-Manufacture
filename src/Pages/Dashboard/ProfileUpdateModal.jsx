@@ -4,20 +4,28 @@ import auth from "../../firebase.init";
 
 const ProfileUpdateModal = ({ setInfo }) => {
   const [user] = useAuthState(auth);
-  const handleSubmit = () => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+    const address = event.target.address.value;
+    const link = event.target.links.value;
+    console.log(name, email, phone, address, link);
+  };
   return (
     <div>
       <input type="checkbox" id="profile-update" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <label
             htmlFor="profile-update"
-            class="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
+            className="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <label className="label">
               <span class="label-text">Your Name</span>
             </label>
@@ -25,7 +33,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
               type="text"
               value={user?.displayName}
               name="name"
-              class="block h-8 border p-5 rounded-md w-full"
+              className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
               <span class="label-text">Your Email</span>
@@ -34,7 +42,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
               type="email"
               name="email"
               value={user?.email}
-              class="block h-8 border p-5 rounded-md w-full"
+              className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
               <span class="label-text">Your Phone</span>
@@ -42,33 +50,33 @@ const ProfileUpdateModal = ({ setInfo }) => {
             <input
               type="text"
               name="phone"
-              class="block h-8 border p-5 rounded-md w-full"
+              className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
-              <span class="label-text">Your Address</span>
+              <span className="label-text">Your Address</span>
             </label>
             <input
               type="text"
               name="address"
-              class="block h-8 border p-5 rounded-md w-full"
+              className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
-              <span class="label-text">Your Social Link</span>
+              <span className="label-text">Your Social Link</span>
             </label>
             <input
               type="text"
               name="links"
-              class="block h-8 border p-5 rounded-md w-full"
+              className="block h-8 border p-5 rounded-md w-full"
             />
+            <div class="modal-action">
+              <input
+                type="submit"
+                value="Submit"
+                htmlFor="profile-update"
+                className="btn btn-primary w-full"
+              />
+            </div>
           </form>
-          <div class="modal-action">
-            <input
-              type="submit"
-              htmlFor="profile-update"
-              class="btn btn-primary w-full"
-              value="Submit"
-            />
-          </div>
         </div>
       </div>
     </div>
