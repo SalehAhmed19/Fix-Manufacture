@@ -11,7 +11,7 @@ const AllProducts = ({ part, index }) => {
       <td>{part.available_quantity}</td>
       <td>
         <button
-          onClick={() => navigate(`/update/${part._id}`)}
+          onClick={() => navigate(`/dashboard/update/${part._id}`)}
           className="btn btn-primary btn-xs"
         >
           Update

@@ -37,7 +37,6 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/update/:id" element={<UpdateProduct />}></Route>
         <Route
           path="/dashboard"
           element={
@@ -81,6 +80,7 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route path="update/:id" element={<UpdateProduct />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
         </Route>
         <Route path="/login" element={<Login />}></Route>

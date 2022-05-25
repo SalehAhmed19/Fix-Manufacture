@@ -27,7 +27,7 @@ const AddProduct = () => {
             price: parseFloat(data.price),
             img: img,
           };
-          fetch("http://localhost:4000/parts", {
+          fetch("https://stark-basin-47833.herokuapp.com/parts/parts", {
             method: "POST",
             headers: {
               "content-type": "application/json",
