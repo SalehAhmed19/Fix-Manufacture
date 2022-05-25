@@ -28,14 +28,6 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
       <td>{order.quantity}</td>
       <td>&euro;{order.price}</td>
       <td>
-        <button
-          onClick={() => handleDelete(order._id)}
-          className="btn btn-xs btn-error bg-red-500 text-white"
-        >
-          Delete
-        </button>
-      </td>
-      <td>
         {order.price && order.paid ? (
           <p className="text-success">Paid</p>
         ) : (
@@ -44,6 +36,20 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
               Payment
             </button>
           </Link>
+        )}
+      </td>
+      <td>
+        {order?.paid ? (
+          <p className="text-primary">
+            TransId: <span className="text-success">{order.transactionId}</span>
+          </p>
+        ) : (
+          <button
+            onClick={() => handleDelete(order._id)}
+            className="btn btn-xs btn-error bg-red-500 text-white"
+          >
+            Cancel Order
+          </button>
         )}
       </td>
     </tr>
