@@ -15,7 +15,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="profile-update" class="modal-toggle" />
+      <input type="checkbox" id="profile-update" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <label
@@ -27,7 +27,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
 
           <form onSubmit={handleSubmit}>
             <label className="label">
-              <span class="label-text">Your Name</span>
+              <span className="label-text">Your Name</span>
             </label>
             <input
               type="text"
@@ -36,7 +36,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
               className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
-              <span class="label-text">Your Email</span>
+              <span className="label-text">Your Email</span>
             </label>
             <input
               type="email"
@@ -45,7 +45,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
               className="block h-8 border p-5 rounded-md w-full"
             />
             <label className="label">
-              <span class="label-text">Your Phone</span>
+              <span className="label-text">Your Phone</span>
             </label>
             <input
               type="text"
@@ -68,7 +68,7 @@ const ProfileUpdateModal = ({ setInfo }) => {
               name="links"
               className="block h-8 border p-5 rounded-md w-full"
             />
-            <div class="modal-action">
+            <div className="modal-action">
               <input
                 type="submit"
                 value="Submit"

@@ -50,12 +50,12 @@ const UpdateProduct = () => {
   return (
     <div className="mx-20">
       <h2 className="text-3xl text-primary text-center font-bold">Update</h2>
-      <div class="card card-side w-1/2 mx-auto mt-10 bg-base-100 shadow-xl">
+      <div className="card card-side w-1/2 mx-auto mt-10 bg-base-100 shadow-xl">
         <figure>
           <img src={part.img} alt="Movie" />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title text-primary">{part.name}</h2>
+        <div className="card-body">
+          <h2 className="card-title text-primary">{part.name}</h2>
           <p>
             <span className="font-bold">ProductId: </span>
             {id}
@@ -72,7 +72,7 @@ const UpdateProduct = () => {
             <span className="font-bold">Price: </span>
             &euro;{part.price}
           </p>
-          <form onSubmit={handleRestock} class="card-actions justify-end">
+          <form onSubmit={handleRestock} className="card-actions justify-end">
             <input
               type="number"
               name="restock"
@@ -81,7 +81,7 @@ const UpdateProduct = () => {
             />
             <input
               type="submit"
-              class="btn btn-primary w-full"
+              className="btn btn-primary w-full"
               value="Restock"
             />
           </form>
