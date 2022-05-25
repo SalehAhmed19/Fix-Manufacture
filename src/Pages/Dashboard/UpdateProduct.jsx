@@ -18,7 +18,8 @@ const UpdateProduct = () => {
     if (!restockQuantity || restockQuantity < 0) {
       toast("Please enter a valid number");
     } else {
-      available_quantity = available_quantity + parseInt(restockQuantity);
+      available_quantity =
+        parseInt(available_quantity) + parseInt(restockQuantity);
       const updateQuantity = {
         name: name,
         price: price,
@@ -65,7 +66,7 @@ const UpdateProduct = () => {
             {part.min_order}
           </p>
           <p>
-            <span className="font-bold">Minimum Order: </span>
+            <span className="font-bold">Available Quantity: </span>
             {part.available_quantity}
           </p>
           <p>
