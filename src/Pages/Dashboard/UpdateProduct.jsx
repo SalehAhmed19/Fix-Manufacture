@@ -6,7 +6,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
   const [part, setPart] = useState({});
   useEffect(() => {
-    const url = `https://stark-basin-47833.herokuapp.com/parts/parts/${id}`;
+    const url = `https://stark-basin-47833.herokuapp.com/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPart(data));
