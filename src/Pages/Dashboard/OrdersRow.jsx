@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 // import useOrders from "../../Hooks/useOrders";
 
@@ -35,7 +36,15 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
         </button>
       </td>
       <td>
-        <button className="btn btn-xs btn-primary text-white">Payment</button>
+        {order.price && order.paid ? (
+          <p className="text-success">Paid</p>
+        ) : (
+          <Link to={`/dashboard/payment/${order._id}`}>
+            <button className="btn btn-xs btn-primary text-white">
+              Payment
+            </button>
+          </Link>
+        )}
       </td>
     </tr>
   );
