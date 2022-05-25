@@ -26,7 +26,7 @@ const ManageOrderRow = ({ order, index }) => {
       <td>{order._id.slice(0, 7) + "..."}</td>
       <td>{order.quantity}</td>
       <td>&euro;{order.price}</td>
-      {order.paid ? <td>Paid</td> : <td></td>}
+      {order.paid ? <td className="text-success">Paid</td> : <td></td>}
       <td>
         <button
           onClick={() => handleDeivered(order._id)}
