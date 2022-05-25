@@ -12,7 +12,7 @@ const ManageOrder = () => {
     })
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
-  }, []);
+  }, [allOrders]);
   return (
     <div>
       <h2 className="text-xl font-bold">Manage Orders: {allOrders.length}</h2>
