@@ -4,7 +4,15 @@ const useToken = (user) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const email = user?.user?.email;
-    const currentUser = { email: email };
+    const phone = "";
+    const address = "";
+    const link = "";
+    const currentUser = {
+      email: email,
+      phone: phone,
+      address: address,
+      link: link,
+    };
     if (email) {
       fetch(`https://stark-basin-47833.herokuapp.com/users/${email}`, {
         method: "PUT",

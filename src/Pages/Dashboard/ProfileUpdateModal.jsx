@@ -11,7 +11,23 @@ const ProfileUpdateModal = ({ setInfo }) => {
     const phone = event.target.phone.value;
     const address = event.target.address.value;
     const link = event.target.links.value;
+    const profileInfo = {
+      name: name,
+      email: email,
+      phone: phone,
+      address: address,
+      link: link,
+    };
     console.log(name, email, phone, address, link);
+    fetch(`http://localhost:4000/users/${email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(profileInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div>

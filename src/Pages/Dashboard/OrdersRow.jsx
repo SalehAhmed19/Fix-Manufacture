@@ -9,6 +9,9 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
     if (agree) {
       fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
