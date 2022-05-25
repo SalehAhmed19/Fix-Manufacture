@@ -30,7 +30,7 @@ const Payment = () => {
       <p>Payment for product: {id}</p>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100 w-full shadow-xl">
             <div className="card-body">
               <h1 className="text-xl font-bold text-success">
                 Hey, {order.name}

@@ -6,7 +6,7 @@ const useParts = () => {
     fetch("https://stark-basin-47833.herokuapp.com/parts")
       .then((res) => res.json())
       .then((data) => setParts(data));
-  }, []);
+  }, [parts]);
   return [parts, setParts];
 };
 export default useParts;

@@ -11,6 +11,7 @@ import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Payment from "./Pages/Dashboard/Payment";
+import UpdateProduct from "./Pages/Dashboard/UpdateProduct";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
@@ -36,6 +37,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/update/:id" element={<UpdateProduct />}></Route>
         <Route
           path="/dashboard"
           element={
