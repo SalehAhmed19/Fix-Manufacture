@@ -19,7 +19,7 @@ const AddReview = () => {
       review: review,
     };
     event.target.reset();
-    fetch("https://stark-basin-47833.herokuapp.com/parts/reviews", {
+    fetch("https://stark-basin-47833.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

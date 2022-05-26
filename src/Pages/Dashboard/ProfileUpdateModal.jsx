@@ -29,7 +29,10 @@ const ProfileUpdateModal = () => {
       body: JSON.stringify(profileInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        event.target.reset();
+        console.log(data);
+      });
   };
   return (
     <div>
@@ -90,7 +93,6 @@ const ProfileUpdateModal = () => {
               <input
                 type="submit"
                 value="Submit"
-                htmlFor="profile-update"
                 className="btn btn-primary w-full"
               />
             </div>
