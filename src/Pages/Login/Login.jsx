@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import google from "../../assets/icons/google.png";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading";
 import useToken from "../../Hooks/useToken";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const emailRef = useRef("");
   const {
     register,
     formState: { errors },
@@ -19,6 +22,7 @@ const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const [token] = useToken(user || gUser);
   let signInErrorMessage;
   const navigate = useNavigate();
@@ -41,6 +45,15 @@ const Login = () => {
       </p>
     );
   }
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast.error("Please enter your email");
+    }
+  };
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data.email, data.password);
   };
@@ -66,6 +79,8 @@ const Login = () => {
                   },
                 })}
                 type="email"
+                name="email"
+                ref={emailRef}
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
               />
@@ -121,6 +136,17 @@ const Login = () => {
               value="Login"
             />
           </form>
+          <p className="text-center">
+            <small>
+              Forget your password?{" "}
+              <span
+                onClick={resetPassword}
+                className="text-primary cursor-pointer"
+              >
+                Reset Password
+              </span>
+            </small>
+          </p>
           <p className="text-center">
             <small>
               New to Doctors Portal?{" "}

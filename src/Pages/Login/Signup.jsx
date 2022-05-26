@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../../Shared/Loading";
 import useToken from "../../Hooks/useToken";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const {
@@ -44,6 +45,7 @@ const Signup = () => {
   const onSubmit = async (data) => {
     await createUserWitEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
+    toast.success("Verification email send successfully");
   };
   return (
     <div className="flex items-center justify-center h-screen">
