@@ -30,12 +30,15 @@ const UserRow = ({ user, index, refetch }) => {
       });
   };
   const removeAdmin = () => {
-    fetch(`http://localhost:4000/users/admin-remove/${email}`, {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://stark-basin-47833.herokuapp.com/users/admin-remove/${email}`,
+      {
+        method: "PUT",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 403) {
           signOut(auth);
