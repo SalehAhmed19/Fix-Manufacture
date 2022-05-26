@@ -29,6 +29,28 @@ const UserRow = ({ user, index, refetch }) => {
         }
       });
   };
+  const removeAdmin = () => {
+    fetch(`http://localhost:4000/users/admin-remove/${email}`, {
+      method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 403) {
+          signOut(auth);
+          navigate("/");
+          toast.error("Failed to made an admin");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          refetch();
+          return toast.success(`Successfully remove an admin: ${user.email}`);
+        }
+      });
+  };
   return (
     <tr>
       <th>{index + 1}</th>
@@ -43,7 +65,10 @@ const UserRow = ({ user, index, refetch }) => {
         )}
       </td>
       <td>
-        <button className="btn btn-error bg-red-500 btn-xs text-white">
+        <button
+          onClick={removeAdmin}
+          className="btn btn-error bg-red-500 btn-xs text-white"
+        >
           Remove Admin
         </button>
       </td>
