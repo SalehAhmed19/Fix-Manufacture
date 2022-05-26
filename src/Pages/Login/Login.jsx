@@ -13,7 +13,7 @@ import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const emailRef = useRef("");
+  const [email, setEmail] = useState("");
   const {
     register,
     formState: { errors },
@@ -45,8 +45,7 @@ const Login = () => {
       </p>
     );
   }
-  const resetPassword = async (event) => {
-    const email = event.target.email.value;
+  const resetPassword = async () => {
     if (email) {
       await sendPasswordResetEmail(email);
       toast("Sent email");
@@ -80,7 +79,7 @@ const Login = () => {
                 })}
                 type="email"
                 name="email"
-                // ref={emailRef}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
               />
