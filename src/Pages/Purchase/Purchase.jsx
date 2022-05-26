@@ -9,6 +9,8 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   const [orderQuantity, setOrderQuantity] = useState(0);
   const [part, setPart] = useState({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   useEffect(() => {
     fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`)
       .then((res) => res.json())
@@ -16,8 +18,6 @@ const Purchase = () => {
   }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.email.value;
     const phone = event.target.phone.value;
     const order = {
       name: name,
@@ -100,6 +100,7 @@ const Purchase = () => {
               type="text"
               name="name"
               value={user?.displayName}
+              onChange={(e) => setName(e.target.value)}
               readOnly
             />
             <input
@@ -107,6 +108,7 @@ const Purchase = () => {
               type="email"
               name="email"
               value={user?.email}
+              onChange={(e) => setEmail(e.target.value)}
               readOnly
             />
             <input
