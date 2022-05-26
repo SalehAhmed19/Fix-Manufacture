@@ -3,26 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 // import useOrders from "../../Hooks/useOrders";
 
-const OrdersRow = ({ order, index, orders, setOrders }) => {
-  const handleDelete = (_id) => {
-    const agree = window.confirm("Are you sure you want to delete");
-    if (agree) {
-      fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            const remainingOrders = orders.filter((order) => order._id !== _id);
-            setOrders(remainingOrders);
-            toast.success("Order deleted successfully");
-          }
-        });
-    }
-  };
+const OrdersRow = ({ order, index, setDeleting }) => {
   return (
     <tr>
       <th>{index + 1}</th>
@@ -47,12 +28,15 @@ const OrdersRow = ({ order, index, orders, setOrders }) => {
             TransId: <span className="text-success">{order.transactionId}</span>
           </p>
         ) : (
-          <button
-            onClick={() => handleDelete(order._id)}
-            className="btn btn-xs btn-error bg-red-500 text-white"
-          >
-            Cancel Order
-          </button>
+          <>
+            <label
+              onClick={setDeleting(order)}
+              for="order-delete"
+              class="btn btn-xs btn-error bg-red-500 text-white modal-button"
+            >
+              Cancel Order
+            </label>
+          </>
         )}
       </td>
     </tr>

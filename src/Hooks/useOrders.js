@@ -29,7 +29,7 @@ const useOrders = () => {
         return res.json();
       })
       .then((data) => setOrders(data));
-  }, [user]);
+  }, [user, orders]);
   return [orders, setOrders];
 };
 export default useOrders;
