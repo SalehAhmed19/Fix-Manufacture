@@ -7,6 +7,7 @@ import auth from "../../firebase.init";
 const Purchase = () => {
   const { _id } = useParams();
   const [user] = useAuthState(auth);
+  const [quantity, setQuantity] = useState(0);
   const [part, setPart] = useState({});
   useEffect(() => {
     fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`)
@@ -115,17 +116,27 @@ const Purchase = () => {
               placeholder="Your phone"
             />
             <input
+              onChange={(e) => setQuantity(e.target.value)}
               className="block my-3 h-9 w-full border rounded-md pl-3"
               type="number"
               placeholder="Product Quantity"
               name="quantity"
               required
             />
-            <input
-              type="submit"
-              className="btn btn-primary w-full"
-              value="Confirm Purchase"
-            />
+            {quantity > part.available_quantity || quantity < part.min_order ? (
+              <input
+                disabled
+                type="submit"
+                className="btn btn-primary w-full"
+                value="Confirm Purchase"
+              />
+            ) : (
+              <input
+                type="submit"
+                className="btn btn-primary w-full"
+                value="Confirm Purchase"
+              />
+            )}
           </form>
         </div>
       </div>
