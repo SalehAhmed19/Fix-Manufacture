@@ -31,7 +31,7 @@ const OrdersRow = ({ order, index, setDeleting }) => {
           <>
             <label
               onClick={setDeleting(order)}
-              for="order-delete"
+              htmlFor="order-delete"
               class="btn btn-xs btn-error bg-red-500 text-white modal-button"
             >
               Cancel Order

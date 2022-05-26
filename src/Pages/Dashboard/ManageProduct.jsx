@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import useParts from "../../Hooks/useParts";
 import AllProducts from "./AllProducts";
+import ProductDelete from "./ProductDelete";
 
 const ManageProduct = () => {
   const [parts] = useParts();
+  const [deleting, setDeleting] = useState(null);
   return (
     <div>
       <h2 className="text-xl font-bold">Manage Product</h2>
@@ -26,12 +28,14 @@ const ManageProduct = () => {
                   key={part._id}
                   index={index}
                   part={part}
+                  setDeleting={setDeleting}
                 ></AllProducts>
               ))}
             </tbody>
           </table>
         </div>
       </div>
+      {deleting && <ProductDelete deleting={deleting} />}
     </div>
   );
 };

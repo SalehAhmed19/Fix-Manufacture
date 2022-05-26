@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const AllProducts = ({ part, index }) => {
+const AllProducts = ({ part, index, setDeleting }) => {
   const navigate = useNavigate();
   return (
     <tr>
@@ -18,9 +18,13 @@ const AllProducts = ({ part, index }) => {
         </button>
       </td>
       <td>
-        <button className="btn btn-xs btn-error bg-red-500 btn-red-500 text-white">
+        <label
+          htmlFor="product-delete"
+          onClick={setDeleting(part)}
+          className="btn btn-xs btn-error bg-red-500 btn-red-500 text-white"
+        >
           Delete
-        </button>
+        </label>
       </td>
     </tr>
   );
