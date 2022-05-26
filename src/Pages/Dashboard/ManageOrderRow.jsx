@@ -26,15 +26,19 @@ const ManageOrderRow = ({ order, index, setDeleting }) => {
           Deliver
         </button>
       </td>
-      <td>
-        <label
-          onClick={setDeleting(order)}
-          htmlFor="order-delete"
-          className="btn btn-xs btn-error bg-red-500 text-white modal-button"
-        >
-          Delete Order
-        </label>
-      </td>
+      {order.paid ? (
+        <td></td>
+      ) : (
+        <td>
+          <label
+            onClick={setDeleting(order)}
+            htmlFor="order-delete"
+            className="btn btn-xs btn-error bg-red-500 text-white modal-button"
+          >
+            Delete Order
+          </label>
+        </td>
+      )}
     </tr>
   );
 };
