@@ -6,7 +6,7 @@ const OrderDeleteModal = ({ deleting }) => {
   const { _id } = deleting;
   const [orders, setOrders] = useOrders();
   const handleDelete = () => {
-    if (deleting.paid) {
+    if (!deleting.paid) {
       fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
         headers: {
