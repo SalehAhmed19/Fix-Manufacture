@@ -25,7 +25,7 @@ const AddProduct = () => {
             des: data.des,
             min_order: parseInt(data.minimum),
             available_quantity: parseInt(data.quantity),
-            price: parseFloat(data.price),
+            price: parseFloat(data.price).toFixed(2),
             img: img,
           };
           fetch("https://stark-basin-47833.herokuapp.com/parts", {

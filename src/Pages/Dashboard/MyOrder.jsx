@@ -30,7 +30,6 @@ const MyOrder = () => {
                 index={index}
                 setOrders={setOrders}
                 setDeleting={setDeleting}
-                orders={orders}
               ></OrdersRow>
             ))}
           </tbody>
