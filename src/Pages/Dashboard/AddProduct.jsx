@@ -24,7 +24,7 @@ const AddProduct = () => {
             name: data.name,
             des: data.des,
             min_order: data.minimum,
-            available_quantity: data.quantity,
+            available_quantity: parseInt(data.quantity),
             price: parseFloat(data.price),
             img: img,
           };

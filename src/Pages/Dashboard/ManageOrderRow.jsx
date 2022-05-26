@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
-import useOrders from "../../Hooks/useOrders";
 
-const ManageOrderRow = ({ order, index }) => {
-  const [orders, setOrders] = useOrders();
+const ManageOrderRow = ({ order, index, setDeleting }) => {
   const [pending, setPending] = useState("Pending");
-  const handleDeivered = (_id) => {
+  const _id = order._id;
+  const handleDeivered = () => {
     setPending("Shipped");
   };
   return (
@@ -22,11 +20,20 @@ const ManageOrderRow = ({ order, index }) => {
       {order.paid ? <td className="text-orange-500">{pending}</td> : <td></td>}
       <td>
         <button
-          onClick={() => handleDeivered(order._id)}
+          onClick={() => handleDeivered(_id)}
           className="btn btn-xs btn-primary"
         >
           Deliver
         </button>
+      </td>
+      <td>
+        <label
+          onClick={setDeleting(order)}
+          htmlFor="order-delete"
+          className="btn btn-xs btn-error bg-red-500 text-white modal-button"
+        >
+          Delete Order
+        </label>
       </td>
     </tr>
   );

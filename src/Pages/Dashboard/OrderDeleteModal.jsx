@@ -6,20 +6,22 @@ const OrderDeleteModal = ({ deleting }) => {
   const { _id } = deleting;
   const [orders, setOrders] = useOrders();
   const handleDelete = () => {
-    fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          const remainingOrders = orders.filter((order) => order._id !== _id);
-          setOrders(remainingOrders);
-          toast.success("Order deleted successfully");
-        }
-      });
+    if (deleting.paid) {
+      fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remainingOrders = orders.filter((order) => order._id !== _id);
+            setOrders(remainingOrders);
+            toast.success("Order deleted successfully");
+          }
+        });
+    }
   };
   return (
     <div>

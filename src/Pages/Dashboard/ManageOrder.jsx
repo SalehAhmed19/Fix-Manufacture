@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ManageOrderRow from "./ManageOrderRow";
+import OrderDeleteModal from "./OrderDeleteModal";
 
 const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
+  const [deleting, setDeleting] = useState(null);
   useEffect(() => {
     fetch("https://stark-basin-47833.herokuapp.com/all-orders", {
       method: "GET",
@@ -27,6 +29,7 @@ const ManageOrder = () => {
               <th>Payment</th>
               <th></th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -35,11 +38,13 @@ const ManageOrder = () => {
                 key={order._id}
                 order={order}
                 index={index}
+                setDeleting={setDeleting}
               ></ManageOrderRow>
             ))}
           </tbody>
         </table>
       </div>
+      {deleting && <OrderDeleteModal deleting={deleting} />}
     </div>
   );
 };
