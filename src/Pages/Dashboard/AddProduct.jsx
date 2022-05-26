@@ -7,6 +7,7 @@ const AddProduct = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const imgStorageKey = "5b89130c9a902f8f77a5dbe94c35281a";
   const onSubmit = async (data) => {
@@ -36,6 +37,7 @@ const AddProduct = () => {
             body: JSON.stringify(product),
           });
           toast.success("Product added successfully");
+          reset();
         }
       });
   };
