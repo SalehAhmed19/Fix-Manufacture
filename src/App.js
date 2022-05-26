@@ -17,6 +17,7 @@ import Login from "./Pages/Login/Login";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import Signup from "./Pages/Login/Signup";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Purchase from "./Pages/Purchase/Purchase";
 import SphareParts from "./Pages/SphareParts/SphareParts";
 import Footer from "./Shared/Footer";
@@ -83,6 +84,7 @@ function App() {
           <Route path="update/:id" element={<UpdateProduct />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
         </Route>
+        <Route path="/portfolio" element={<MyPortfolio />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
       </Routes>

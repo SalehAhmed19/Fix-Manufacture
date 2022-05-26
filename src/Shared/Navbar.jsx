@@ -80,6 +80,9 @@ const Navbar = () => {
               <Link to="/dashboard">Dashboard</Link>
             </li>
           )}
+          <li>
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
         </ul>
         {user ? (
           <button onClick={handleSignOut} className="btn btn-ghost">
