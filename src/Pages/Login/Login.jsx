@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import google from "../../assets/icons/google.png";
 import {
   useSignInWithGoogle,
@@ -45,8 +45,8 @@ const Login = () => {
       </p>
     );
   }
-  const resetPassword = async () => {
-    const email = emailRef.current.value;
+  const resetPassword = async (event) => {
+    const email = event.target.email.value;
     if (email) {
       await sendPasswordResetEmail(email);
       toast("Sent email");
@@ -80,7 +80,7 @@ const Login = () => {
                 })}
                 type="email"
                 name="email"
-                ref={emailRef}
+                // ref={emailRef}
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
               />
