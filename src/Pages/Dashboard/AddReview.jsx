@@ -30,7 +30,7 @@ const AddReview = () => {
   };
   return (
     <div>
-      <div className="w-1/2 border rounded-md p-10">
+      <div className="w-full lg:w-1/2 border rounded-md p-10">
         <h2 className="text-xl font-bold">Add Review</h2>
         <div className="avatar">
           <div className="w-16 rounded-full">

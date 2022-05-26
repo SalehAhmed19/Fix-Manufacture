@@ -5,10 +5,10 @@ import auth from "../../firebase.init";
 
 const ProfileUpdateModal = () => {
   const [user] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
-    const email = event.target.email.value;
     const phone = event.target.phone.value;
     const address = event.target.address.value;
     const link = event.target.links.value;
@@ -53,6 +53,7 @@ const ProfileUpdateModal = () => {
             <input
               type="text"
               value={user?.displayName}
+              onChange={(e) => setName(e.target.value)}
               name="name"
               className="block h-8 border p-5 rounded-md w-full"
             />
@@ -62,6 +63,7 @@ const ProfileUpdateModal = () => {
             <input
               type="email"
               name="email"
+              onChange={(e) => setEmail(e.target.value)}
               value={user?.email}
               className="block h-8 border p-5 rounded-md w-full"
             />
