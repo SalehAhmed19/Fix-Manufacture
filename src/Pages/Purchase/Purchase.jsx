@@ -7,7 +7,7 @@ import auth from "../../firebase.init";
 const Purchase = () => {
   const { _id } = useParams();
   const [user] = useAuthState(auth);
-  const [quantity, setQuantity] = useState(0);
+  const [orderQuantity, setOrderQuantity] = useState(0);
   const [part, setPart] = useState({});
   useEffect(() => {
     fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`)
@@ -19,26 +19,26 @@ const Purchase = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const phone = event.target.phone.value;
-    const quantity = event.target.quantity.value;
     const order = {
       name: name,
       email: email,
       phone: phone,
       productId: part._id,
       product: part.name,
-      available_quantity: quantity,
-      price: part.price * quantity,
+      available_quantity: part.available_quantity,
+      quantity: orderQuantity,
+      price: part.price * orderQuantity,
     };
-    if (quantity < part.min_order) {
+    if (orderQuantity < part.min_order) {
       return toast.error("You can not order less than 100");
     }
-    if (quantity > part.available_quantity) {
+    if (orderQuantity > part.available_quantity) {
       return toast.error(
         `We've ${part.available_quantity} unit on our stock. You can't order above our available quantity`
       );
     }
     const availabeQuantity =
-      parseInt(part.available_quantity) - parseInt(quantity);
+      parseInt(part.available_quantity) - parseInt(orderQuantity);
     const update = {
       name: name,
       email: email,
@@ -116,14 +116,15 @@ const Purchase = () => {
               placeholder="Your phone"
             />
             <input
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => setOrderQuantity(e.target.value)}
               className="block my-3 h-9 w-full border rounded-md pl-3"
               type="number"
               placeholder="Product Quantity"
               name="quantity"
               required
             />
-            {quantity > part.available_quantity || quantity < part.min_order ? (
+            {orderQuantity > part.available_quantity ||
+            orderQuantity < part.min_order ? (
               <input
                 disabled
                 type="submit"
