@@ -35,7 +35,7 @@ const ProductDelete = ({ deleting }) => {
             ✕
           </label>
           <h5 className="text-xl font-bold my-5">
-            Are you sure you want to cancel your order?
+            Are you sure you want to delete this product?
           </h5>
           <label
             htmlFor="product-delete"
