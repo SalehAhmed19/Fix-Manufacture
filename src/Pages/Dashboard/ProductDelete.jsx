@@ -25,16 +25,16 @@ const ProductDelete = ({ deleting }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="product-delete" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box relative">
+      <input type="checkbox" id="product-delete" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
           <label
             htmlFor="product-delete"
-            class="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
+            className="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <h5 class="text-xl font-bold my-5">
+          <h5 className="text-xl font-bold my-5">
             Are you sure you want to cancel your order?
           </h5>
           <label

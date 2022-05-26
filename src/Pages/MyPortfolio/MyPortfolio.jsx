@@ -8,8 +8,8 @@ const MyPortfolio = () => {
         My Portfolio
       </h2>
       <div>
-        <div class="avatar flex justify-center">
-          <div class="w-56 mask mask-squircle">
+        <div className="avatar flex justify-center">
+          <div className="w-56 mask mask-squircle">
             <img src={sa} alt="" />
           </div>
         </div>

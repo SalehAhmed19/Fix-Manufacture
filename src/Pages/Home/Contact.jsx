@@ -9,7 +9,7 @@ const Contact = () => {
         background: `url(${bg})`,
         backgroundSize: "cover",
       }}
-      className="my-5 grid bg-accent grid-cols-1 lg:grid-cols-2 mx-5 p-8"
+      className="my-5 grid bg-accent grid-cols-1 lg:grid-cols-2 my-9 mx-5 p-8"
     >
       <div>
         <h2 className="text-primary font-bold text-3xl">
@@ -54,7 +54,7 @@ const Contact = () => {
             type="text"
           />
           <textarea
-            class="textarea textarea-bordered w-full"
+            className="textarea textarea-bordered w-full"
             placeholder="How can we help?"
           ></textarea>
           <input
