@@ -1,8 +1,9 @@
-import React from "react";
+import { updateProfile } from "firebase/auth";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
-const ProfileUpdateModal = ({ setInfo }) => {
+const ProfileUpdateModal = () => {
   const [user] = useAuthState(auth);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,10 +20,11 @@ const ProfileUpdateModal = ({ setInfo }) => {
       link: link,
     };
     console.log(name, email, phone, address, link);
-    fetch(`http://localhost:4000/users/${email}`, {
+    fetch(`https://stark-basin-47833.herokuapp.com/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(profileInfo),
     })
