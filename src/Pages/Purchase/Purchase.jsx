@@ -21,12 +21,12 @@ const Purchase = () => {
     const phone = event.target.phone.value;
     const order = {
       name: name,
-      email: email,
+      email: user.email,
       phone: phone,
       productId: part._id,
       product: part.name,
-      available_quantity: part.available_quantity,
-      quantity: orderQuantity,
+      available_quantity: parseInt(part.available_quantity),
+      quantity: parseInt(orderQuantity),
       price: part.price * orderQuantity,
     };
     if (orderQuantity < part.min_order) {
@@ -41,11 +41,11 @@ const Purchase = () => {
       parseInt(part.available_quantity) - parseInt(orderQuantity);
     const update = {
       name: name,
-      email: email,
+      email: user.email,
       phone: phone,
       productId: part._id,
       product: part.name,
-      available_quantity: availabeQuantity,
+      available_quantity: parseInt(availabeQuantity),
     };
 
     fetch(`https://stark-basin-47833.herokuapp.com/orders`, {

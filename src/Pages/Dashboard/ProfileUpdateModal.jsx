@@ -20,6 +20,8 @@ const ProfileUpdateModal = () => {
       link: link,
     };
     console.log(name, email, phone, address, link);
+    const url = `https://stark-basin-47833.herokuapp.com/users/${email}`;
+    console.log(url);
     fetch(`https://stark-basin-47833.herokuapp.com/users/${email}`, {
       method: "PUT",
       headers: {
