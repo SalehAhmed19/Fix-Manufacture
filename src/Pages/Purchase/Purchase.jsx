@@ -21,7 +21,7 @@ const Purchase = () => {
     const phone = event.target.phone.value;
     const order = {
       name: name,
-      email: user.email,
+      email: user?.email,
       phone: phone,
       productId: part._id,
       product: part.name,
@@ -41,7 +41,7 @@ const Purchase = () => {
       parseInt(part.available_quantity) - parseInt(orderQuantity);
     const update = {
       name: name,
-      email: user.email,
+      email: user?.email,
       phone: phone,
       productId: part._id,
       product: part.name,
