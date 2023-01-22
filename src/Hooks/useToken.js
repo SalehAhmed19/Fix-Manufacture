@@ -14,7 +14,7 @@ const useToken = (user) => {
       link: link,
     };
     if (email) {
-      fetch(`https://stark-basin-47833.herokuapp.com/users/${email}`, {
+      fetch(`https://dull-plum-iguana-ring.cyclic.app/users/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

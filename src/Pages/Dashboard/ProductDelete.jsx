@@ -6,7 +6,7 @@ const ProductDelete = ({ deleting }) => {
   const { _id } = deleting;
   const [parts, setParts] = useParts();
   const handleDelete = () => {
-    fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`, {
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/parts/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

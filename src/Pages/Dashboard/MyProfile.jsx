@@ -8,7 +8,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [usr, setUsr] = useState({});
   useEffect(() => {
-    fetch(`https://stark-basin-47833.herokuapp.com/users/${user.email}`, {
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/users/${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

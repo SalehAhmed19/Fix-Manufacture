@@ -6,7 +6,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`https://stark-basin-47833.herokuapp.com/admin/${email}`, {
+      fetch(`https://dull-plum-iguana-ring.cyclic.app/admin/${email}`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

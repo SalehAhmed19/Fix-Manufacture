@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 // import useOrders from "../../Hooks/useOrders";
 
 const OrdersRow = ({ order, index, setDeleting }) => {

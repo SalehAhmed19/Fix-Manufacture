@@ -11,7 +11,7 @@ const useOrders = () => {
   const navigate = useNavigate();
   useEffect(() => {
     fetch(
-      `https://stark-basin-47833.herokuapp.com/orders?email=${user.email}`,
+      `https://dull-plum-iguana-ring.cyclic.app/orders?email=${user.email}`,
       {
         method: "GET",
         headers: {

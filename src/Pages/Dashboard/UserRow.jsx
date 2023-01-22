@@ -8,7 +8,7 @@ const UserRow = ({ user, index, refetch }) => {
   const navigate = useNavigate();
   const email = user.email;
   const makeAdmin = () => {
-    fetch(`https://stark-basin-47833.herokuapp.com/users/admin/${email}`, {
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -31,7 +31,7 @@ const UserRow = ({ user, index, refetch }) => {
   };
   const removeAdmin = () => {
     fetch(
-      `https://stark-basin-47833.herokuapp.com/users/admin-remove/${email}`,
+      `https://dull-plum-iguana-ring.cyclic.app/users/admin-remove/${email}`,
       {
         method: "PUT",
         headers: {

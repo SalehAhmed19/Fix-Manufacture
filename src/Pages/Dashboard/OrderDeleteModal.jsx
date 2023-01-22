@@ -7,7 +7,7 @@ const OrderDeleteModal = ({ deleting }) => {
   const [orders, setOrders] = useOrders();
   const handleDelete = () => {
     if (!deleting.paid) {
-      fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
+      fetch(`https://dull-plum-iguana-ring.cyclic.app/orders/${_id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

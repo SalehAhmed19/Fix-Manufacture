@@ -6,7 +6,7 @@ const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [deleting, setDeleting] = useState(null);
   useEffect(() => {
-    fetch("https://stark-basin-47833.herokuapp.com/all-orders", {
+    fetch("https://dull-plum-iguana-ring.cyclic.app/all-orders", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

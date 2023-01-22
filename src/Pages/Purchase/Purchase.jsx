@@ -12,7 +12,7 @@ const Purchase = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   useEffect(() => {
-    fetch(`https://stark-basin-47833.herokuapp.com/parts/${_id}`)
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/parts/${_id}`)
       .then((res) => res.json())
       .then((data) => setPart(data));
   }, []);
@@ -48,7 +48,7 @@ const Purchase = () => {
       available_quantity: parseInt(availabeQuantity),
     };
 
-    fetch(`https://stark-basin-47833.herokuapp.com/orders`, {
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/orders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(order),
@@ -58,7 +58,7 @@ const Purchase = () => {
         event.target.reset();
       })
     );
-    const url = `https://stark-basin-47833.herokuapp.com/parts/${_id}`;
+    const url = `https://dull-plum-iguana-ring.cyclic.app/parts/${_id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },

@@ -20,9 +20,9 @@ const ProfileUpdateModal = () => {
       link: link,
     };
     console.log(name, email, phone, address, link);
-    const url = `https://stark-basin-47833.herokuapp.com/users/${email}`;
+    const url = `https://dull-plum-iguana-ring.cyclic.app/users/${email}`;
     console.log(url);
-    fetch(`https://stark-basin-47833.herokuapp.com/users/${email}`, {
+    fetch(`https://dull-plum-iguana-ring.cyclic.app/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

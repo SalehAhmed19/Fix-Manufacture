@@ -19,7 +19,7 @@ const AddReview = () => {
       review: review,
     };
     event.target.reset();
-    fetch("https://stark-basin-47833.herokuapp.com/reviews", {
+    fetch("https://dull-plum-iguana-ring.cyclic.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

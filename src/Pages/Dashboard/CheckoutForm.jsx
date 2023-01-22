@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const { _id, price, email, name } = order;
   useEffect(() => {
-    fetch("https://stark-basin-47833.herokuapp.com/create-payment-intent", {
+    fetch("https://dull-plum-iguana-ring.cyclic.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -61,7 +61,7 @@ const CheckoutForm = ({ order }) => {
         productId: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://stark-basin-47833.herokuapp.com/orders/${_id}`, {
+      fetch(`https://dull-plum-iguana-ring.cyclic.app/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

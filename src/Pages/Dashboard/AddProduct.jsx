@@ -28,7 +28,7 @@ const AddProduct = () => {
             price: parseFloat(data.price).toFixed(2),
             img: img,
           };
-          fetch("https://stark-basin-47833.herokuapp.com/parts", {
+          fetch("https://dull-plum-iguana-ring.cyclic.app/parts", {
             method: "POST",
             headers: {
               "content-type": "application/json",
