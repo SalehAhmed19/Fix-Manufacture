@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { ClimbingBoxLoader } from "react-spinners";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -25,72 +27,95 @@ import Footer from "./Shared/Footer";
 import Navbar from "./Shared/Navbar";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
   return (
     <div className="text-secondary">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/parts/" element={<SphareParts />}></Route>
-        <Route
-          path="/purchase/:_id"
-          element={
-            <RequireAuth>
-              <Purchase />
-            </RequireAuth>
-          }
-        ></Route>
-        <Route
-          path="/dashboard"
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
+      {loading ? (
+        <div
+          style={{
+            height: "100vh",
+            backgroundColor: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <Route index element={<MyOrder />}></Route>
-          <Route path="add-review" element={<AddReview />}></Route>
-          <Route path="payment/:id" element={<Payment />}></Route>
-          <Route
-            path="add-product"
-            element={
-              <RequireAdmin>
-                <AddProduct />
-              </RequireAdmin>
-            }
-          ></Route>
-          <Route
-            path="manage-product"
-            element={
-              <RequireAdmin>
-                <ManageProduct />
-              </RequireAdmin>
-            }
-          ></Route>
-          <Route
-            path="manage-order"
-            element={
-              <RequireAdmin>
-                <ManageOrder />
-              </RequireAdmin>
-            }
-          ></Route>
-          <Route
-            path="users"
-            element={
-              <RequireAdmin>
-                <MakeAdmin />
-              </RequireAdmin>
-            }
-          ></Route>
-          <Route path="update/:id" element={<UpdateProduct />}></Route>
-          <Route path="profile" element={<MyProfile />}></Route>
-        </Route>
-        <Route path="/blogs" element={<Blogs />}></Route>
-        <Route path="/portfolio" element={<MyPortfolio />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-      </Routes>
-      <Footer />
+          <ClimbingBoxLoader color="#263DD9" />
+        </div>
+      ) : (
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/parts/" element={<SphareParts />}></Route>
+            <Route
+              path="/purchase/:_id"
+              element={
+                <RequireAuth>
+                  <Purchase />
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/dashboard"
+              element={
+                <RequireAuth>
+                  <Dashboard />
+                </RequireAuth>
+              }
+            >
+              <Route index element={<MyOrder />}></Route>
+              <Route path="add-review" element={<AddReview />}></Route>
+              <Route path="payment/:id" element={<Payment />}></Route>
+              <Route
+                path="add-product"
+                element={
+                  <RequireAdmin>
+                    <AddProduct />
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="manage-product"
+                element={
+                  <RequireAdmin>
+                    <ManageProduct />
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="manage-order"
+                element={
+                  <RequireAdmin>
+                    <ManageOrder />
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="users"
+                element={
+                  <RequireAdmin>
+                    <MakeAdmin />
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route path="update/:id" element={<UpdateProduct />}></Route>
+              <Route path="profile" element={<MyProfile />}></Route>
+            </Route>
+            <Route path="/blogs" element={<Blogs />}></Route>
+            <Route path="/portfolio" element={<MyPortfolio />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
+          </Routes>
+          <Footer />
+        </div>
+      )}
       <ToastContainer />
     </div>
   );
