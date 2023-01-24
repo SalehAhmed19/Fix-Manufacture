@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { ClimbingBoxLoader } from "react-spinners";
+import { ClockLoader } from "react-spinners";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -46,7 +46,7 @@ function App() {
             alignItems: "center",
           }}
         >
-          <ClimbingBoxLoader color="#263DD9" />
+          <ClockLoader color="#263DD9" />
         </div>
       ) : (
         <div>
