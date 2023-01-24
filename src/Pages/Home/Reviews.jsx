@@ -4,7 +4,7 @@ import Review from "./Review";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://dull-plum-iguana-ring.cyclic.app/reviews")
+    fetch("https://fix-manufacturer.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

@@ -6,7 +6,7 @@ const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [deleting, setDeleting] = useState(null);
   useEffect(() => {
-    fetch("https://dull-plum-iguana-ring.cyclic.app/all-orders", {
+    fetch("https://fix-manufacturer.onrender.com/all-orders", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

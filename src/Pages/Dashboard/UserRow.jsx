@@ -8,7 +8,7 @@ const UserRow = ({ user, index, refetch }) => {
   const navigate = useNavigate();
   const email = user.email;
   const makeAdmin = () => {
-    fetch(`https://dull-plum-iguana-ring.cyclic.app/users/admin/${email}`, {
+    fetch(`https://fix-manufacturer.onrender.com/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -30,15 +30,12 @@ const UserRow = ({ user, index, refetch }) => {
       });
   };
   const removeAdmin = () => {
-    fetch(
-      `https://dull-plum-iguana-ring.cyclic.app/users/admin-remove/${email}`,
-      {
-        method: "PUT",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`https://fix-manufacturer.onrender.com/users/admin-remove/${email}`, {
+      method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => {
         if (res.status === 403) {
           signOut(auth);

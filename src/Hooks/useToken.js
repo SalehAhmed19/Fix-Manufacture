@@ -14,7 +14,7 @@ const useToken = (user) => {
       link: link,
     };
     if (email) {
-      fetch(`https://dull-plum-iguana-ring.cyclic.app/users/${email}`, {
+      fetch(`https://fix-manufacturer.onrender.com/users/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

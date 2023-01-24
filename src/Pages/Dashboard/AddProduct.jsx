@@ -28,7 +28,7 @@ const AddProduct = () => {
             price: parseFloat(data.price).toFixed(2),
             img: img,
           };
-          fetch("https://dull-plum-iguana-ring.cyclic.app/parts", {
+          fetch("https://fix-manufacturer.onrender.com/parts", {
             method: "POST",
             headers: {
               "content-type": "application/json",

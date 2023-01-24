@@ -20,9 +20,9 @@ const ProfileUpdateModal = () => {
       link: link,
     };
     console.log(name, email, phone, address, link);
-    const url = `https://dull-plum-iguana-ring.cyclic.app/users/${email}`;
+    const url = `https://fix-manufacturer.onrender.com/users/${email}`;
     console.log(url);
-    fetch(`https://dull-plum-iguana-ring.cyclic.app/users/${email}`, {
+    fetch(`https://fix-manufacturer.onrender.com/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,7 @@ const Purchase = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   useEffect(() => {
-    fetch(`https://dull-plum-iguana-ring.cyclic.app/parts/${_id}`)
+    fetch(`https://fix-manufacturer.onrender.com/parts/${_id}`)
       .then((res) => res.json())
       .then((data) => setPart(data));
   }, []);
@@ -48,7 +48,7 @@ const Purchase = () => {
       available_quantity: parseInt(availabeQuantity),
     };
 
-    fetch(`https://dull-plum-iguana-ring.cyclic.app/orders`, {
+    fetch(`https://fix-manufacturer.onrender.com/orders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(order),
@@ -58,7 +58,7 @@ const Purchase = () => {
         event.target.reset();
       })
     );
-    const url = `https://dull-plum-iguana-ring.cyclic.app/parts/${_id}`;
+    const url = `https://fix-manufacturer.onrender.com/parts/${_id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },
