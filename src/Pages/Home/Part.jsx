@@ -8,7 +8,7 @@ const Part = ({ part }) => {
     navigate(`/purchase/${part._id}`);
   };
   return (
-    <div className="card card-compact w-full bg-base-100 shadow-xl">
+    <div className="card card-compact w-full bg-base-100 border">
       <figure>
         <img className="w-1/2" src={part.img} alt="Shoes" />
       </figure>
