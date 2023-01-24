@@ -25,7 +25,6 @@ import Purchase from "./Pages/Purchase/Purchase";
 import SphareParts from "./Pages/SphareParts/SphareParts";
 import Footer from "./Shared/Footer";
 import Navbar from "./Shared/Navbar";
-// https://fix-manufacturer.onrender.com
 
 function App() {
   const [loading, setLoading] = useState(false);

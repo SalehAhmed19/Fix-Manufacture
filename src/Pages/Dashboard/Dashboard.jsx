@@ -44,9 +44,9 @@ const Dashboard = () => {
                 </li>
               </>
             )}
-            <li>
+            {/* <li>
               <Link to="/dashboard/profile">My Profile</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
