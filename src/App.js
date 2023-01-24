@@ -46,7 +46,7 @@ function App() {
             alignItems: "center",
           }}
         >
-          <ClockLoader color="#263DD9" />
+          <ClockLoader size={70} color="#263DD9" />
         </div>
       ) : (
         <div>
