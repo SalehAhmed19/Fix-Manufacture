@@ -32,7 +32,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 3000);
   }, []);
   return (
     <div className="text-secondary">
