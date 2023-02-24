@@ -48,7 +48,7 @@ const Signup = () => {
     toast.success("Verification email send successfully");
   };
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen mt-10">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl text-primary font-bold">

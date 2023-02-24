@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const { _id, price, email, name } = order;
   useEffect(() => {
-    fetch("https://fix-manufacturer.onrender.com/create-payment-intent", {
+    fetch("http://localhost:4000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -61,7 +61,7 @@ const CheckoutForm = ({ order }) => {
         productId: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://fix-manufacturer.onrender.com/orders/${_id}`, {
+      fetch(`http://localhost:4000/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

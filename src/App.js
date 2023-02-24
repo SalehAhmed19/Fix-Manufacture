@@ -24,7 +24,7 @@ import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Purchase from "./Pages/Purchase/Purchase";
 import SphareParts from "./Pages/SphareParts/SphareParts";
 import Footer from "./Shared/Footer";
-import Navbar from "./Shared/Navbar";
+import Navbar from "./Shared/DrawerAppBar";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -122,3 +122,5 @@ function App() {
 }
 
 export default App;
+// Primary: #FFC001
+// Secondary: #FF7400

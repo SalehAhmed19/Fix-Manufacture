@@ -6,7 +6,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
   const [part, setPart] = useState({});
   useEffect(() => {
-    const url = `https://fix-manufacturer.onrender.com/parts/${id}`;
+    const url = `http://localhost:4000/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPart(data));
@@ -28,7 +28,7 @@ const UpdateProduct = () => {
         img: img,
         available_quantity: available_quantity,
       };
-      const url = `https://fix-manufacturer.onrender.com/parts/${id}`;
+      const url = `http://localhost:4000/parts/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {

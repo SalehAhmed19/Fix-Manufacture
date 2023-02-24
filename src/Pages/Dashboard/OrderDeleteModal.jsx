@@ -7,7 +7,7 @@ const OrderDeleteModal = ({ deleting }) => {
   const [orders, setOrders] = useOrders();
   const handleDelete = () => {
     if (!deleting.paid) {
-      fetch(`https://fix-manufacturer.onrender.com/orders/${_id}`, {
+      fetch(`http://localhost:4000/orders/${_id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

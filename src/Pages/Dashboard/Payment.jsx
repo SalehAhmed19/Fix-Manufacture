@@ -12,7 +12,7 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const url = `https://fix-manufacturer.onrender.com/orders/${id}`;
+  const url = `http://localhost:4000/orders/${id}`;
   const { data: order, isLoading } = useQuery("order", () =>
     fetch(url, {
       method: "GET",

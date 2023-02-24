@@ -10,7 +10,7 @@ const useOrders = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`https://fix-manufacturer.onrender.com/orders?email=${user.email}`, {
+    fetch(`http://localhost:4000/orders?email=${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -7,7 +7,7 @@ const SphareParts = () => {
   const [parts, setParts] = useParts();
   return (
     <div>
-      <h1 className="text-2xl md:text-3xl font-bold text-secondary text-center my-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-secondary text-center my-24">
         All Spare Parts
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:mx-20">

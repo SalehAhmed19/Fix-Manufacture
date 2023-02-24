@@ -20,9 +20,9 @@ const ProfileUpdateModal = () => {
       link: link,
     };
     console.log(name, email, phone, address, link);
-    const url = `https://fix-manufacturer.onrender.com/users/${email}`;
+    const url = `http://localhost:4000/users/${email}`;
     console.log(url);
-    fetch(`https://fix-manufacturer.onrender.com/users/${email}`, {
+    fetch(`http://localhost:4000/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

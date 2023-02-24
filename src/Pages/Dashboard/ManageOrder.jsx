@@ -6,7 +6,7 @@ const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [deleting, setDeleting] = useState(null);
   useEffect(() => {
-    fetch("https://fix-manufacturer.onrender.com/all-orders", {
+    fetch("http://localhost:4000/all-orders", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

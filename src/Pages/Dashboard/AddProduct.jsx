@@ -28,7 +28,7 @@ const AddProduct = () => {
             price: parseFloat(data.price).toFixed(2),
             img: img,
           };
-          fetch("https://fix-manufacturer.onrender.com/parts", {
+          fetch("http://localhost:4000/parts", {
             method: "POST",
             headers: {
               "content-type": "application/json",
