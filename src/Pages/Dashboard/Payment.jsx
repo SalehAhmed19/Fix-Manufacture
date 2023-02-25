@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { HashLoader } from "react-spinners";
 import Loading from "../../Shared/Loading";
 import CheckoutForm from "./CheckoutForm";
 
@@ -22,7 +23,19 @@ const Payment = () => {
     }).then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <HashLoader size={70} color="#FF7400" />
+      </div>
+    );
   }
   return (
     <div>

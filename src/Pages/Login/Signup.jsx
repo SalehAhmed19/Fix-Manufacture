@@ -13,6 +13,7 @@ import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
 import { TextField } from "@mui/material";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { HashLoader } from "react-spinners";
 
 const Signup = () => {
   const {
@@ -30,7 +31,19 @@ const Signup = () => {
   let from = location.state?.from?.pathname || "/";
   const [token] = useToken(user || gUser);
   if (loading || gLoading || updating) {
-    return <Loading />;
+    return (
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <HashLoader size={70} color="#FF7400" />
+      </div>
+    );
   }
   if (token) {
     navigate(from, { replace: true });

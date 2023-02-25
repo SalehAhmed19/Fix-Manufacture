@@ -13,6 +13,7 @@ import Loading from "../../Shared/Loading";
 import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
 import { Button, TextField } from "@mui/material";
+import { HashLoader } from "react-spinners";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +37,19 @@ const Login = () => {
     }
   }, [token, from, navigate]);
   if (loading || gLoading) {
-    return <Loading />;
+    return (
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <HashLoader size={70} color="#FF7400" />
+      </div>
+    );
   }
   if (error || gError) {
     signInErrorMessage = (

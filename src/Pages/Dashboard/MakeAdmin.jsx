@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { HashLoader } from "react-spinners";
 import Loading from "../../Shared/Loading";
 import UserRow from "./UserRow";
 
@@ -17,7 +18,19 @@ const MakeAdmin = () => {
     }).then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <HashLoader size={70} color="#FF7400" />
+      </div>
+    );
   }
   return (
     <div>
