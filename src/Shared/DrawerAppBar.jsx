@@ -35,7 +35,10 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", backgroundColor: "#FFC001" }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
@@ -98,7 +101,7 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { sm: "none" }, color: "#000" }}
           >
             <MenuIcon />
           </IconButton>

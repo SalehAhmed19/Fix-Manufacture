@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { ClockLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -40,13 +40,13 @@ function App() {
         <div
           style={{
             height: "100vh",
-            backgroundColor: "#fff",
+            backgroundColor: "#FFC001",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <ClockLoader size={70} color="#263DD9" />
+          <HashLoader size={70} color="#FF7400" />
         </div>
       ) : (
         <div>
