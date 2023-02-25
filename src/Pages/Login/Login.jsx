@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import google from "../../assets/icons/google.png";
+import { AiFillGoogleCircle } from "react-icons/ai";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
@@ -11,6 +12,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading";
 import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
+import { Button, TextField } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -58,12 +60,12 @@ const Login = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="w-2/6 bg-[#FDBE06] rounded-md mt-20">
         <div className="card-body">
-          <h2 className="text-center text-2xl text-primary font-bold">Login</h2>
+          <h2 className="text-center text-4xl text-[#000] font-bold">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
+            <div className="form-control w-full">
+              {/* <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
@@ -82,6 +84,25 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
+              /> */}
+              <TextField
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is required",
+                  },
+                  pattern: {
+                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    message: "Please provide a valid email",
+                  },
+                })}
+                sx={{ marginTop: "10px" }}
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                id="outlined-basic"
+                label="Email"
+                variant="outlined"
               />
               <label className="label">
                 {errors.email?.type === "required" && (
@@ -96,8 +117,8 @@ const Login = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
+            <div className="form-control w-full">
+              {/* <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
@@ -114,6 +135,25 @@ const Login = () => {
                 type="password"
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
+              /> */}
+              <TextField
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "Must be 6 character or lognger",
+                  },
+                })}
+                type="password"
+                sx={{ marginTop: "10px" }}
+                name="password"
+                onChange={(e) => setEmail(e.target.value)}
+                id="outlined-basic"
+                label="Password"
+                variant="outlined"
               />
               <label className="label">
                 {errors.password?.type === "required" && (
@@ -128,19 +168,21 @@ const Login = () => {
                 )}
               </label>
             </div>
-            {signInErrorMessage}
-            <input
-              className="btn btn-primary w-full"
+            <p className="mb-2">{signInErrorMessage}</p>
+            <button
+              className="bg-[#000] p-3 rounded-md text-[#fff] w-full"
               type="submit"
               value="Login"
-            />
+            >
+              LOGIN
+            </button>
           </form>
           <p className="text-center">
             <small>
               Forget your password?{" "}
               <span
                 onClick={resetPassword}
-                className="text-primary cursor-pointer"
+                className="text-[#FF0000] cursor-pointer"
               >
                 Reset Password
               </span>
@@ -148,8 +190,8 @@ const Login = () => {
           </p>
           <p className="text-center">
             <small>
-              New to Doctors Portal?{" "}
-              <Link to="/signup" className="text-primary">
+              New to Fix-Manufacturer?{" "}
+              <Link to="/signup" className="text-[#FF0000]">
                 Create new account
               </Link>
             </small>
@@ -157,10 +199,10 @@ const Login = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-primary btn-outline"
+            className="bg-transparent border border-[#000] p-3 rounded-md text-[#000] w-full flex justify-center items-center px-14 hover:bg-[#000] hover:text-[#fff]"
           >
-            Continue with Google
-            <img className="h-6 ml-2" src={google} alt="" />
+            Continue with GOOGLE
+            <AiFillGoogleCircle className="text-2xl ml-5" />
           </button>
         </div>
       </div>

@@ -11,6 +11,8 @@ import auth from "../../firebase.init";
 import Loading from "../../Shared/Loading";
 import useToken from "../../Hooks/useToken";
 import { toast } from "react-toastify";
+import { TextField } from "@mui/material";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 const Signup = () => {
   const {
@@ -49,14 +51,14 @@ const Signup = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen mt-10">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="w-2/6 bg-[#FDBE06] shadow-xl mt-20 rounded-md">
         <div className="card-body">
-          <h2 className="text-center text-2xl text-primary font-bold">
+          <h2 className="text-center text-4xl text-[#000] font-bold">
             Registration
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
+            <div className="form-control w-full">
+              {/* <label className="label">
                 <span className="label-text">Your Name</span>
               </label>
               <input
@@ -69,6 +71,21 @@ const Signup = () => {
                 type="text"
                 placeholder="Your Name"
                 className="input input-bordered w-full max-w-xs"
+              /> */}
+              <TextField
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is required",
+                  },
+                })}
+                sx={{ marginTop: "10px" }}
+                type="text"
+                name="name"
+                // onChange={(e) => setEmail(e.target.value)}
+                id="outlined-basic"
+                label="Your Name"
+                variant="outlined"
               />
               <label className="label">
                 {errors.name?.type === "required" && (
@@ -78,8 +95,8 @@ const Signup = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
+            <div className="form-control w-full">
+              {/* <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
@@ -96,6 +113,25 @@ const Signup = () => {
                 type="email"
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
+              /> */}
+              <TextField
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is required",
+                  },
+                  pattern: {
+                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    message: "Please provide a valid email",
+                  },
+                })}
+                sx={{ marginTop: "10px" }}
+                type="email"
+                name="email"
+                // onChange={(e) => setEmail(e.target.value)}
+                id="outlined-basic"
+                label="Your Email"
+                variant="outlined"
               />
               <label className="label">
                 {errors.email?.type === "required" && (
@@ -110,8 +146,8 @@ const Signup = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
+            <div className="form-control w-full">
+              {/* <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
@@ -128,6 +164,25 @@ const Signup = () => {
                 type="password"
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
+              /> */}
+              <TextField
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "Must be 6 character or lognger",
+                  },
+                })}
+                type="password"
+                sx={{ marginTop: "10px" }}
+                name="password"
+                // onChange={(e) => setEmail(e.target.value)}
+                id="outlined-basic"
+                label="Password"
+                variant="outlined"
               />
               <label className="label">
                 {errors.password?.type === "required" && (
@@ -142,17 +197,19 @@ const Signup = () => {
                 )}
               </label>
             </div>
-            {signInErrorMessage}
-            <input
-              className="btn btn-primary w-full"
+            <p className="mb-2">{signInErrorMessage}</p>
+            <button
+              className="bg-[#000] p-3 rounded-md text-[#fff] w-full"
               type="submit"
-              value="Sign Up"
-            />
+              value="Login"
+            >
+              SIGN UP
+            </button>
           </form>
           <p className="text-center">
             <small>
               Already have an account?{" "}
-              <Link to="/login" className="text-primary">
+              <Link to="/login" className="text-[#FF0000]">
                 Login
               </Link>
             </small>
@@ -160,10 +217,10 @@ const Signup = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-primary btn-outline"
+            className="bg-transparent border border-[#000] p-3 rounded-md text-[#000] w-full flex justify-center items-center px-14 hover:bg-[#000] hover:text-[#fff]"
           >
-            Continue with Google{" "}
-            <img className="h-6 ml-2" src={google} alt="" />
+            Continue with GOOGLE
+            <AiFillGoogleCircle className="text-2xl ml-5" />
           </button>
         </div>
       </div>

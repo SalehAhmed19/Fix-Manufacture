@@ -28,15 +28,15 @@ const BusinessSummary = () => {
     },
   ];
   return (
-    <div className="pb-5 px-5 bg-accent">
-      <h2 className="font-bold text-center text-3xl py-3 text-primary">
+    <div className="px-5 py-20">
+      <h2 className="font-bold text-center text-6xl py-3 text-[#000]">
         Business Summary
       </h2>
       <div className="flex justify-center my-5">
         <div className="stats border w-3/4">
           <div className="stats stats-vertical lg:stats-horizontal shadow">
             {summary.map((sum) => (
-              <div className="stat flex flex-col items-center justify-center text-primary">
+              <div className="stat flex flex-col items-center justify-center">
                 <div className="stat-value text-4xl lg:text-6xl">
                   {sum.icon}
                 </div>

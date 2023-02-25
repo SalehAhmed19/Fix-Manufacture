@@ -5,6 +5,7 @@ import { ClimbingBoxLoader } from "react-spinners";
 import Banner from "./Banner";
 import BusinessSummary from "./BusinessSummary";
 import Contact from "./Contact";
+import Newsletter from "./Newsletter";
 import Offer from "./Offer";
 import Parts from "./Parts";
 import Reviews from "./Reviews";
@@ -16,8 +17,9 @@ const Home = () => {
       <Parts />
       <Offer />
       <BusinessSummary />
+      <Newsletter />
       <Reviews />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };

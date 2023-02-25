@@ -9,10 +9,10 @@ const Contact = () => {
         background: `url(${bg})`,
         backgroundSize: "cover",
       }}
-      className="my-5 grid bg-accent grid-cols-1 lg:grid-cols-2 my-9 mx-5 p-8"
+      className="my-5 grid bg-accent grid-cols-1 lg:grid-cols-2 mx-5 p-8"
     >
       <div>
-        <h2 className="text-primary font-bold text-3xl">
+        <h2 className="text-[#FDBE06] font-bold text-4xl">
           Call Us or Fill the Form
         </h2>
         <div className="my-5">
