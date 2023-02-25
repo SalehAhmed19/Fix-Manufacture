@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Table, Thead, Tbody, Tr, Th } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import useOrders from "../../Hooks/useOrders";
 import OrderDeleteModal from "./OrderDeleteModal";
 import OrdersRow from "./OrdersRow";
@@ -9,32 +11,31 @@ const MyOrder = () => {
   return (
     <div>
       <h2 className="text-xl font-bold">My Order</h2>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Product ID</th>
-              <th>Product</th>
-              <th>QtY</th>
-              <th>Total Price</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order, index) => (
-              <OrdersRow
-                key={order._id}
-                order={order}
-                index={index}
-                setOrders={setOrders}
-                setDeleting={setDeleting}
-              ></OrdersRow>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Table>
+        <Thead>
+          <Tr>
+            <Th></Th>
+            <Th>Product ID :</Th>
+            <Th>Product :</Th>
+            <Th>QtY :</Th>
+            <Th>Total Price :</Th>
+            <Th>Payment Status :</Th>
+            <Th>Transaction ID :</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {orders.map((order, index) => (
+            <OrdersRow
+              key={order._id}
+              order={order}
+              index={index}
+              setOrders={setOrders}
+              setDeleting={setDeleting}
+            ></OrdersRow>
+          ))}
+        </Tbody>
+      </Table>
+
       {deleting && <OrderDeleteModal deleting={deleting} />}
     </div>
   );
