@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [deleting, setDeleting] = useState(null);
   return (
     <div>
-      <h2 className="text-xl font-bold">My Order</h2>
+      <h2 className="text-xl font-bold my-5">My Order</h2>
       <Table>
         <Thead>
           <Tr>

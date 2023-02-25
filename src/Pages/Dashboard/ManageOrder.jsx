@@ -17,7 +17,9 @@ const ManageOrder = () => {
   }, [allOrders]);
   return (
     <div>
-      <h2 className="text-xl font-bold">Manage Orders: {allOrders.length}</h2>
+      <h2 className="text-xl font-bold my-5">
+        Manage Orders: {allOrders.length}
+      </h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

@@ -21,7 +21,7 @@ const MakeAdmin = () => {
   }
   return (
     <div>
-      <h2 className="text-xl font-bold">Users</h2>
+      <h2 className="text-xl font-bold my-5">Users</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

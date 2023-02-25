@@ -8,7 +8,7 @@ const ManageProduct = () => {
   const [deleting, setDeleting] = useState(null);
   return (
     <div>
-      <h2 className="text-xl font-bold">Manage Product</h2>
+      <h2 className="text-xl font-bold my-5">Manage Product</h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table w-full">
