@@ -1,8 +1,12 @@
+import { Button } from "@mui/joy";
+import { TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { GiShoppingBag } from "react-icons/gi";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import Magnifier from "react-magnifier";
 
 const Purchase = () => {
   const { _id } = useParams();
@@ -75,70 +79,107 @@ const Purchase = () => {
   };
   return (
     <div>
-      <div className="w-3/4 flex items-center shadow-xl mx-auto mt-10">
+      <div className="lg:w-3/4 flex flex-col lg:flex-row items-center mx-auto my-24">
         <div>
-          <img src={part.img} alt="item" />
+          <Magnifier src={part.img} width={300} />
+          <div className="mx-5">
+            <h2 className="text-xl lg:text-3xl font-bold">{part.name}</h2>
+            <p className="mb-5">{part.des}</p>
+            <p>
+              <span className="font-bold">Minimum Order: </span>
+              {part.min_order}
+            </p>
+            <p>
+              <span className="font-bold">Available Quantity: </span>
+              {part.available_quantity}
+            </p>
+            <h5 className="text-xl">
+              <span className="font-bold">Price: </span>${part.price}
+            </h5>
+          </div>
         </div>
-        <div className="card-body">
-          <h2 className="card-title">{part.name}</h2>
-          <p>{part.des}</p>
-          <p>
-            <span className="font-bold">Minimum Order: </span>
-            {part.min_order}
-          </p>
-          <p>
-            <span className="font-bold">Available Quantity: </span>
-            {part.available_quantity}
-          </p>
-          <h5 className="text-xl">
-            <span className="font-bold">Price: </span>
-            &euro;{part.price}
-          </h5>
-          <form onSubmit={handleSubmit} className="mx-auto w-1/2">
-            <input
-              className="block my-3 h-9 w-full border rounded-md pl-3"
-              type="text"
-              name="name"
+        <div className="card-body border-2 rounded-lg">
+          <h3 className="font-bold text-[#FEC002] text-xl text-center">
+            Place your order
+          </h3>
+          <form onSubmit={handleSubmit} className="mx-auto">
+            <TextField
+              sx={{ width: "100%", marginTop: "20px" }}
               value={user?.displayName}
               onChange={(e) => setName(e.target.value)}
               readOnly
+              type="text"
+              name="name"
+              id="outlined-basic"
+              variant="outlined"
             />
-            <input
-              className="block my-3 h-9 w-full border rounded-md pl-3"
+            <TextField
+              sx={{ width: "100%", marginTop: "20px" }}
+              value={user?.email}
+              onChange={(e) => setName(e.target.value)}
+              readOnly
               type="email"
               name="email"
-              value={user?.email}
-              onChange={(e) => setEmail(e.target.value)}
-              readOnly
+              id="outlined-basic"
+              variant="outlined"
             />
-            <input
-              className="block my-3 h-9 w-full border rounded-md pl-3"
+            <TextField
+              sx={{ width: "100%", marginTop: "20px" }}
               type="text"
               name="phone"
-              placeholder="Your phone"
+              label="Your Phone"
+              id="outlined-basic"
+              variant="outlined"
             />
-            <input
+            <TextField
               onChange={(e) => setOrderQuantity(e.target.value)}
-              className="block my-3 h-9 w-full border rounded-md pl-3"
+              sx={{ width: "100%", marginTop: "20px" }}
               type="number"
               placeholder="Product Quantity"
               name="quantity"
+              label="Product Quantity"
+              id="outlined-basic"
+              variant="outlined"
               required
             />
             {orderQuantity > part.available_quantity ||
             orderQuantity < part.min_order ? (
-              <input
+              <Button
+                type="submit"
                 disabled
-                type="submit"
-                className="btn btn-primary w-full"
-                value="Confirm Purchase"
-              />
+                variant="solid"
+                size="lg"
+                style={{
+                  color: "#878787",
+                  backgroundColor: "#A7B4C7",
+                  marginTop: "10px",
+                  width: "100%",
+                  display: "flex",
+                  padding: "15px",
+                }}
+                aria-label="Explore Bahamas Islands"
+                sx={{ ml: "auto", fontWeight: 600 }}
+              >
+                Purchase <GiShoppingBag className="ml-3" />
+              </Button>
             ) : (
-              <input
+              <Button
                 type="submit"
-                className="btn btn-primary w-full"
-                value="Confirm Purchase"
-              />
+                variant="solid"
+                size="lg"
+                style={{
+                  color: "#FF0000",
+                  backgroundColor: "#FEC002",
+                  marginTop: "10px",
+                  width: "100%",
+                  display: "flex",
+                  padding: "15px",
+                }}
+                aria-label="Explore Bahamas Islands"
+                sx={{ ml: "auto", fontWeight: 600 }}
+              >
+                Purchase <GiShoppingBag className="ml-3" />
+              </Button>
             )}
           </form>
         </div>
