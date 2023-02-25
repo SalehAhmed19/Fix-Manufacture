@@ -15,8 +15,7 @@ const SparePart = ({ part }) => {
   };
   return (
     <Card
-      variant="outlined"
-      sx={{ width: 300, border: "1px solid #FEC002", margin: "0 auto" }}
+      sx={{ width: 300, boxShadow: "1px 1px 20px #FFE9EC", margin: "0 auto" }}
     >
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img src={part.img} loading="lazy" alt="" />

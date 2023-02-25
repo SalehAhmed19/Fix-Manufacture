@@ -105,7 +105,9 @@ body {
     background: #000;
   }
   
-  .arrow {
+  .arrow { 
+    border-radius: 50%; padding: 10px;
+    background: #000;
     width: 30px;
     height: 30px;
     position: absolute;

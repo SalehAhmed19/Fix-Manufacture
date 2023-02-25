@@ -10,8 +10,12 @@ const Part = ({ part }) => {
   };
   return (
     <Card
-      variant="outlined"
-      sx={{ width: 300, border: "1px solid #FEC002", margin: "0 auto" }}
+      variant=""
+      sx={{
+        width: 300,
+        margin: "0 auto",
+        boxShadow: "1px 1px 20px #FFE9EC",
+      }}
     >
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
         <img src={part.img} loading="lazy" alt="" />
