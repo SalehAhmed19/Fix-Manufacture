@@ -1,6 +1,7 @@
 import React from "react";
-import { ShoppingCartIcon } from "@heroicons/react/solid";
+import { GiShoppingBag } from "react-icons/gi";
 import { Link, useNavigate } from "react-router-dom";
+import { AspectRatio, Box, Button, Card, Typography } from "@mui/joy";
 
 const Part = ({ part }) => {
   const navigate = useNavigate();
@@ -8,31 +9,49 @@ const Part = ({ part }) => {
     navigate(`/purchase/${part._id}`);
   };
   return (
-    <div className="card card-compact w-full bg-base-100 border">
-      <figure>
-        <img className="w-1/2" src={part.img} alt="Shoes" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{part.name}</h2>
-        <p>{part.des}</p>
-        <p>
-          <span className="font-bold">Minimum Order: </span>
-          {part.min_order}
-        </p>
-        <p>
-          <span className="font-bold">Available Quantity: </span>
-          {part.available_quantity}
-        </p>
-        <h5 className="text-xl">
-          <span className="font-bold">Price: </span>&euro;{part.price}
-        </h5>
-        <div className="card-actions justify-end">
-          <button onClick={handleNavigate} className="btn btn-primary w-full">
-            Purchase <ShoppingCartIcon className="h-6" />
-          </button>
+    <Card
+      variant="outlined"
+      sx={{ width: 300, border: "1px solid #FEC002", margin: "0 auto" }}
+    >
+      <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
+        <img src={part.img} loading="lazy" alt="" />
+      </AspectRatio>
+      <Box>
+        <div>
+          <Typography fontSize="lg" fontWeight="lg">
+            {part.name.slice(0, 45) + "..."}
+          </Typography>
+          <p className="mt-5">
+            <span className="font-bold">Minimum Order: </span>
+            {part.min_order}{" "}
+          </p>{" "}
+          <p>
+            <span className="font-bold">Available Quantity: </span>
+            {part.available_quantity}
+          </p>
+          <Typography sx={{ marginTop: "10px" }} fontSize="lg" fontWeight="lg">
+            ${part.price}
+          </Typography>
         </div>
-      </div>
-    </div>
+        <Button
+          onClick={handleNavigate}
+          variant="solid"
+          size="lg"
+          style={{
+            color: "#FF0000",
+            backgroundColor: "#FEC002",
+            marginTop: "10px",
+            width: "100%",
+            display: "flex",
+            padding: "15px",
+          }}
+          aria-label="Explore Bahamas Islands"
+          sx={{ ml: "auto", fontWeight: 600 }}
+        >
+          Purchase <GiShoppingBag className="ml-3" />
+        </Button>
+      </Box>
+    </Card>
   );
 };
 

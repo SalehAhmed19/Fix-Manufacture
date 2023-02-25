@@ -122,5 +122,6 @@ function App() {
 }
 
 export default App;
-// Primary: #FFC001
+// primary: #FFC001
 // Secondary: #FF7400
+// Accent: #FF0000
