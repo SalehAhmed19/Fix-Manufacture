@@ -98,7 +98,7 @@ const Signup = () => {
                 // onChange={(e) => setEmail(e.target.value)}
                 id="outlined-basic"
                 label="Your Name"
-                variant="outlined"
+                variant="filled"
               />
               <label className="label">
                 {errors.name?.type === "required" && (
@@ -144,7 +144,7 @@ const Signup = () => {
                 // onChange={(e) => setEmail(e.target.value)}
                 id="outlined-basic"
                 label="Your Email"
-                variant="outlined"
+                variant="filled"
               />
               <label className="label">
                 {errors.email?.type === "required" && (
@@ -195,7 +195,7 @@ const Signup = () => {
                 // onChange={(e) => setEmail(e.target.value)}
                 id="outlined-basic"
                 label="Password"
-                variant="outlined"
+                variant="filled"
               />
               <label className="label">
                 {errors.password?.type === "required" && (

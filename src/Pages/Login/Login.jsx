@@ -109,13 +109,16 @@ const Login = () => {
                     message: "Please provide a valid email",
                   },
                 })}
-                sx={{ marginTop: "10px" }}
+                sx={{
+                  marginTop: "10px",
+                  marginLeft: "10px",
+                }}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 id="outlined-basic"
                 label="Email"
-                variant="outlined"
+                variant="filled"
               />
               <label className="label">
                 {errors.email?.type === "required" && (
@@ -161,12 +164,15 @@ const Login = () => {
                   },
                 })}
                 type="password"
-                sx={{ marginTop: "10px" }}
+                sx={{
+                  marginTop: "10px",
+                  marginLeft: "10px",
+                }}
                 name="password"
                 onChange={(e) => setEmail(e.target.value)}
                 id="outlined-basic"
                 label="Password"
-                variant="outlined"
+                variant="filled"
               />
               <label className="label">
                 {errors.password?.type === "required" && (
