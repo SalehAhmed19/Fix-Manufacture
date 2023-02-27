@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import useParts from "../../Hooks/useParts";
 import AllProducts from "./AllProducts";
 import ProductDelete from "./ProductDelete";
+import { Table, Thead, Tbody, Tr, Th } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const ManageProduct = () => {
   const [parts] = useParts();
@@ -10,19 +12,19 @@ const ManageProduct = () => {
     <div>
       <h2 className="text-xl font-bold my-5">Manage Product</h2>
       <div>
-        <div className="overflow-x-auto">
-          <table className="table w-full">
-            <thead>
-              <tr>
-                <th></th>
-                <th>ProductId</th>
-                <th>Product Name</th>
-                <th>QtY</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
+        <div>
+          <Table>
+            <Thead>
+              <Tr>
+                <Th></Th>
+                <Th>ProductId</Th>
+                <Th>Product Name</Th>
+                <Th>QtY</Th>
+                <Th></Th>
+                <Th></Th>
+              </Tr>
+            </Thead>
+            <Tbody>
               {parts.map((part, index) => (
                 <AllProducts
                   key={part._id}
@@ -31,8 +33,8 @@ const ManageProduct = () => {
                   setDeleting={setDeleting}
                 ></AllProducts>
               ))}
-            </tbody>
-          </table>
+            </Tbody>
+          </Table>
         </div>
       </div>
       {deleting && <ProductDelete deleting={deleting} />}

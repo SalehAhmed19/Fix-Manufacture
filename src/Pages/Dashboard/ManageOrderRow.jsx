@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Td, Tr, Th } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const ManageOrderRow = ({ order, index, setDeleting }) => {
   const [pending, setPending] = useState("Pending");
@@ -7,39 +9,53 @@ const ManageOrderRow = ({ order, index, setDeleting }) => {
     setPending("Shipped");
   };
   return (
-    <tr>
-      <th>{index + 1}</th>
-      <td>{order._id.slice(0, 7) + "..."}</td>
-      <td>{order.quantity}</td>
-      <td>&euro;{order.price}</td>
+    <Tr style={{ border: "2px solid #E6E5E5" }}>
+      <Th style={{ textAlign: "center", padding: "15px" }}>{index + 1}</Th>
+      <Td style={{ textAlign: "center", padding: "15px" }}>
+        {order._id.slice(0, 7) + "..."}
+      </Td>
+      <Td style={{ textAlign: "center", padding: "15px" }}>{order.quantity}</Td>
+      <Td style={{ textAlign: "center", padding: "15px" }}>
+        &euro;{order.price}
+      </Td>
       {order.paid ? (
-        <td className="text-success">Paid</td>
+        <Td
+          style={{ textAlign: "center", padding: "15px" }}
+          className="text-success"
+        >
+          Paid
+        </Td>
       ) : (
-        <td className="text-error">Unpaid</td>
+        <Td
+          style={{ textAlign: "center", padding: "15px" }}
+          className="text-error"
+        >
+          Unpaid
+        </Td>
       )}
-      {order.paid ? <td className="text-orange-500">{pending}</td> : <td></td>}
-      <td>
+      {order.paid ? <Td className="text-orange-500">{pending}</Td> : <Td></Td>}
+      <Td style={{ textAlign: "center", padding: "15px" }}>
         <button
           onClick={() => handleDeivered(_id)}
-          className="btn btn-xs btn-primary"
+          className="px-7 py-2 rounded cursor-pointer bg-[#FEC002] mx-auto flex items-center"
         >
           Deliver
         </button>
-      </td>
+      </Td>
       {order.paid ? (
-        <td></td>
+        <Td style={{ textAlign: "center", padding: "15px" }}></Td>
       ) : (
-        <td>
+        <Td style={{ textAlign: "center", padding: "15px" }}>
           <label
             onClick={setDeleting(order)}
             htmlFor="order-delete"
-            className="btn btn-xs btn-error bg-red-500 text-white modal-button"
+            className="px-7 py-2 rounded cursor-pointer bg-red-500 text-[#fff] mx-auto flex items-center"
           >
             Delete Order
           </label>
-        </td>
+        </Td>
       )}
-    </tr>
+    </Tr>
   );
 };
 

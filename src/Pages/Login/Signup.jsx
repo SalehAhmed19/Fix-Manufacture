@@ -64,7 +64,7 @@ const Signup = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen mt-10">
-      <div className="w-2/6 bg-[#FDBE06] shadow-xl mt-20 rounded-md">
+      <div className="lg:w-2/6 w-full mx-5 bg-[#FDBE06] shadow-xl mt-20 rounded-md">
         <div className="card-body">
           <h2 className="text-center text-4xl text-[#000] font-bold">
             Registration
@@ -230,7 +230,7 @@ const Signup = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="bg-transparent border border-[#000] p-3 rounded-md text-[#000] w-full flex justify-center items-center px-14 hover:bg-[#000] hover:text-[#fff]"
+            className="bg-transparent border border-[#000] p-3 rounded-md text-[#000] w-full flex justify-center items-center lg:px-14 hover:bg-[#000] hover:text-[#fff]"
           >
             Continue with GOOGLE
             <AiFillGoogleCircle className="text-2xl ml-5" />

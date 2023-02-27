@@ -166,7 +166,7 @@ const AddProduct = () => {
             </label>
           </div>
           <input
-            className="btn btn-primary block mt-4 w-full"
+            className="px-7 py-2 rounded cursor-pointer bg-[#FEC002] mx-auto flex items-center w-full justify-center"
             type="submit"
             value="Add Product"
           />

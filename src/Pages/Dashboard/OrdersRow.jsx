@@ -9,7 +9,7 @@ import "../../Styles/Banner.css";
 
 const OrdersRow = ({ order, index, setDeleting }) => {
   return (
-    <Tr className="padding" style={{ border: "2px solid #E6E5E5" }}>
+    <Tr style={{ border: "2px solid #E6E5E5" }}>
       <Th style={{ textAlign: "center", padding: "15px" }}>{index + 1}</Th>
       <Td style={{ textAlign: "center", padding: "15px" }}>
         {order.productId.slice(0, 6) + "..."}

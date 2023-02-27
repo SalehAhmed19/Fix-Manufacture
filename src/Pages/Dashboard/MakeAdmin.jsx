@@ -3,6 +3,8 @@ import { useQuery } from "react-query";
 import { HashLoader } from "react-spinners";
 import Loading from "../../Shared/Loading";
 import UserRow from "./UserRow";
+import { Table, Thead, Tbody, Tr, Th } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const MakeAdmin = () => {
   const {
@@ -35,17 +37,19 @@ const MakeAdmin = () => {
   return (
     <div>
       <h2 className="text-xl font-bold my-5">Users</h2>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-            </tr>
-          </thead>
-          <tbody>
+      <div>
+        <Table>
+          <Thead>
+            <Tr style={{ border: "2px solid #E6E5E5" }}>
+              <Th style={{ textAlign: "center", padding: "15px" }}></Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Name</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Job</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>
+                Favorite Color
+              </Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {users.map((user, index) => (
               <UserRow
                 key={user._id}
@@ -54,8 +58,8 @@ const MakeAdmin = () => {
                 refetch={refetch}
               ></UserRow>
             ))}
-          </tbody>
-        </table>
+          </Tbody>
+        </Table>
       </div>
     </div>
   );

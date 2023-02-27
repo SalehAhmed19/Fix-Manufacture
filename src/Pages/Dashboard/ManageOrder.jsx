@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ManageOrderRow from "./ManageOrderRow";
 import OrderDeleteModal from "./OrderDeleteModal";
+import { Table, Thead, Tbody, Tr, Th } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -20,21 +22,23 @@ const ManageOrder = () => {
       <h2 className="text-xl font-bold my-5">
         Manage Orders: {allOrders.length}
       </h2>
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>ProductId</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Payment</th>
-              <th>Status</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+      <div>
+        <Table>
+          <Thead>
+            <Tr style={{ border: "2px solid #E6E5E5" }}>
+              <Th style={{ textAlign: "center", padding: "15px" }}></Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>
+                ProductId
+              </Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Quantity</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Price</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Payment</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}>Status</Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}></Th>
+              <Th style={{ textAlign: "center", padding: "15px" }}></Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {allOrders.map((order, index) => (
               <ManageOrderRow
                 key={order._id}
@@ -43,8 +47,8 @@ const ManageOrder = () => {
                 setDeleting={setDeleting}
               ></ManageOrderRow>
             ))}
-          </tbody>
-        </table>
+          </Tbody>
+        </Table>
       </div>
       {deleting && <OrderDeleteModal deleting={deleting} />}
     </div>
