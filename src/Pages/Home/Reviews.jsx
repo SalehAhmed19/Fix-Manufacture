@@ -6,7 +6,7 @@ import Zoom from "react-reveal/Zoom";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/reviews")
+    fetch("https://fix-manufacturer.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

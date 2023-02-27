@@ -8,7 +8,7 @@ const ProductDelete = ({ deleting }) => {
   const { _id } = deleting;
   const [parts, setParts] = useParts();
   const handleDelete = () => {
-    fetch(`http://localhost:4000/parts/${_id}`, {
+    fetch(`https://fix-manufacturer.onrender.com/parts/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

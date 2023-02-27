@@ -19,24 +19,24 @@ const Newsletter = () => {
             <p className="text-[#C2C2C2]">
               We carry over 250 of the world's highest quality automotive parts
             </p>
+            <div className="grid grid-cols-5 gap-5 mt-20">
+              <div className="flex justify-center items-center">
+                <img className="w-14" src={apple} alt="" />
+              </div>
+              <div className="flex justify-center items-center">
+                <img className="w-14" src={mi} alt="" />
+              </div>
+              <div className="flex justify-center items-center px-2">
+                <img className="" src={samsung} alt="" />
+              </div>
+              <div className="flex justify-center items-center px-2">
+                <img className="" src={realme} alt="" />
+              </div>
+              <div className="flex justify-center items-center px-2">
+                <img className="" src={oppo} alt="" />
+              </div>
+            </div>
           </Fade>
-          <div className="grid grid-cols-5 gap-5 mt-20">
-            <div className="flex justify-center items-center">
-              <img className="w-14" src={apple} alt="" />
-            </div>
-            <div className="flex justify-center items-center">
-              <img className="w-14" src={mi} alt="" />
-            </div>
-            <div className="flex justify-center items-center px-2">
-              <img className="" src={samsung} alt="" />
-            </div>
-            <div className="flex justify-center items-center px-2">
-              <img className="" src={realme} alt="" />
-            </div>
-            <div className="flex justify-center items-center px-2">
-              <img className="" src={oppo} alt="" />
-            </div>
-          </div>
         </div>
         <div className="lg:w-1/2 bg-[#FEBF04] h-96 px-10 py-14">
           <Fade right>

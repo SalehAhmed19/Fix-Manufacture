@@ -8,7 +8,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [usr, setUsr] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:4000/users/${user.email}`, {
+    fetch(`https://fix-manufacturer.onrender.com/users/${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

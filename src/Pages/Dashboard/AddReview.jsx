@@ -19,7 +19,7 @@ const AddReview = () => {
       review: review,
     };
     event.target.reset();
-    fetch("http://localhost:4000/reviews", {
+    fetch("https://fix-manufacturer.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

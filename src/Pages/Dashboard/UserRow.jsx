@@ -10,7 +10,7 @@ const UserRow = ({ user, index, refetch }) => {
   const navigate = useNavigate();
   const email = user.email;
   const makeAdmin = () => {
-    fetch(`http://localhost:4000/users/admin/${email}`, {
+    fetch(`https://fix-manufacturer.onrender.com/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,7 +32,7 @@ const UserRow = ({ user, index, refetch }) => {
       });
   };
   const removeAdmin = () => {
-    fetch(`http://localhost:4000/users/admin-remove/${email}`, {
+    fetch(`https://fix-manufacturer.onrender.com/users/admin-remove/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

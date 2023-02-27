@@ -10,7 +10,7 @@ const OrderDeleteModal = ({ deleting }) => {
   const [open, setOpen] = React.useState(false);
   const handleDelete = () => {
     if (!deleting.paid) {
-      fetch(`http://localhost:4000/orders/${_id}`, {
+      fetch(`https://fix-manufacturer.onrender.com/orders/${_id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -14,7 +14,7 @@ const useToken = (user) => {
       link: link,
     };
     if (email) {
-      fetch(`http://localhost:4000/users/${email}`, {
+      fetch(`https://fix-manufacturer.onrender.com/users/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
