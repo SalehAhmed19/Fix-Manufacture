@@ -65,7 +65,11 @@ const AddReview = () => {
             name="review"
             placeholder="Write a review"
           ></textarea>
-          <input className="btn btn-primary" type="submit" value="Add Review" />
+          <input
+            className="px-7 py-2 rounded cursor-pointer bg-[#FEC002] mx-auto flex items-center w-full justify-center"
+            type="submit"
+            value="Add Review"
+          />
         </form>
       </div>
     </div>

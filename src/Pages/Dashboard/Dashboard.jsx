@@ -1,60 +1,3 @@
-// import React from "react";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import { Link, Outlet } from "react-router-dom";
-// import auth from "../../firebase.init";
-// import useAdmin from "../../Hooks/useAdmin";
-
-// const Dashboard = () => {
-//   const [user] = useAuthState(auth);
-//   const [admin] = useAdmin(user);
-//   return (
-//     <div>
-//       <div className="drawer drawer-mobile my-24">
-//         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-//         <div className="drawer-content">
-//           <h2 className="text-3xl text-[#FEC002] my-5 font-bold">Dashboard</h2>
-//           <Outlet />
-//         </div>
-//         <div className="drawer-side">
-//           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-//           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-//             {!admin && (
-//               <>
-//                 <li>
-//                   <Link to="/dashboard">My Orders</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/dashboard/add-review">Add review</Link>
-//                 </li>
-//               </>
-//             )}
-//             {admin && (
-//               <>
-//                 <li>
-//                   <Link to="/dashboard/add-product">Add Product</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/dashboard/manage-product">Manage Product</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/dashboard/manage-order">Manage Orders</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/dashboard/users">Make Admin</Link>
-//                 </li>
-//               </>
-//             )}
-//             {/* <li>
-//               <Link to="/dashboard/profile">My Profile</Link>
-//             </li> */}
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -63,13 +6,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -78,6 +17,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import useAdmin from "../../Hooks/useAdmin";
 import { RiAdminFill, RiUserFill } from "react-icons/ri";
+import {
+  MdAddCircleOutline,
+  MdAddShoppingCart,
+  MdOutlineAdminPanelSettings,
+  MdOutlineRateReview,
+  MdOutlineShoppingCart,
+  MdProductionQuantityLimits,
+} from "react-icons/md";
 
 const drawerWidth = 240;
 
@@ -110,12 +57,18 @@ function Dashboard(props) {
           <>
             <ListItem>
               <Link to="/dashboard/my-order">
-                <ListItemButton>My Orders</ListItemButton>
+                <ListItemButton>
+                  <MdOutlineShoppingCart className="mr-5" />
+                  My Orders
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/dashboard/add-review">
-                <ListItemButton>Add review</ListItemButton>
+                <ListItemButton>
+                  <MdOutlineRateReview className="mr-5" />
+                  Add review
+                </ListItemButton>
               </Link>
             </ListItem>
           </>
@@ -124,23 +77,35 @@ function Dashboard(props) {
           <>
             <ListItem>
               <Link to="/dashboard/add-product">
-                <ListItemButton>Add Product</ListItemButton>
+                <ListItemButton>
+                  <MdAddCircleOutline className="mr-5" />
+                  Add Product
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/dashboard/manage-product">
-                <ListItemButton>Manage Product</ListItemButton>
+                <ListItemButton>
+                  <MdProductionQuantityLimits className="mr-5" />
+                  Manage Product
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/dashboard/manage-order">
-                <ListItemButton>Manage Orders</ListItemButton>
+                <ListItemButton>
+                  <MdAddShoppingCart className="mr-5" />
+                  Manage Orders
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
-              <ListItemButton>
-                <Link to="/dashboard/users">Make Admin</Link>
-              </ListItemButton>
+              <Link to="/dashboard/users">
+                <ListItemButton>
+                  <MdOutlineAdminPanelSettings className="mr-5" />
+                  Make Admin
+                </ListItemButton>
+              </Link>
             </ListItem>
           </>
         )}
