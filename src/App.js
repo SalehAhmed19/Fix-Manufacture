@@ -25,6 +25,7 @@ import Purchase from "./Pages/Purchase/Purchase";
 import SphareParts from "./Pages/SphareParts/SphareParts";
 import Footer from "./Shared/Footer";
 import Navbar from "./Shared/DrawerAppBar";
+import DashboardHome from "./Pages/Dashboard/DashboardHome";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -70,7 +71,8 @@ function App() {
                 </RequireAuth>
               }
             >
-              <Route index element={<MyOrder />}></Route>
+              <Route index element={<DashboardHome />}></Route>
+              <Route path="my-order" element={<MyOrder />}></Route>
               <Route path="add-review" element={<AddReview />}></Route>
               <Route path="payment/:id" element={<Payment />}></Route>
               <Route
