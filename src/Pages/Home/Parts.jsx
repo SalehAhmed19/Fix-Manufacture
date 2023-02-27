@@ -6,7 +6,7 @@ import { Pulse, Fade, Zoom } from "react-reveal";
 const Parts = () => {
   const [parts, setParts] = useParts();
   return (
-    <div className="my-10 mx-10">
+    <div className="my-20 mx-10">
       <Fade left>
         <div className="flex items-end">
           <h2 className="font-bold text-2xl text-[#FEC002]">Feature Product</h2>

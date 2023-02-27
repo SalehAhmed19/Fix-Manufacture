@@ -10,4 +10,3 @@ const useParts = () => {
   return [parts, setParts];
 };
 export default useParts;
-// https://fix-manufacturer.onrender.com/

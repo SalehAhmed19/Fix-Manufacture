@@ -3,12 +3,14 @@ import { IoIosPeople } from "react-icons/io";
 import { GiMoneyStack } from "react-icons/gi";
 import { MdOutlineReviews } from "react-icons/md";
 import { BsGearWideConnected } from "react-icons/bs";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 
 const BusinessSummary = () => {
   const summary = [
     {
       _id: 1,
-      summary: "We served 100+ customers",
+      summary: "1000+ customers",
       icon: <IoIosPeople />,
     },
     {
@@ -28,27 +30,23 @@ const BusinessSummary = () => {
     },
   ];
   return (
-    <div className="px-5 py-20">
-      <h2 className="font-bold text-center text-6xl py-3 text-[#000]">
-        Business Summary
-      </h2>
-      <div className="flex justify-center my-5">
-        <div className="stats border w-3/4">
-          <div className="stats stats-vertical lg:stats-horizontal shadow">
-            {summary.map((sum) => (
-              <div className="stat flex flex-col items-center justify-center">
-                <div className="stat-value text-4xl lg:text-6xl">
-                  {sum.icon}
-                </div>
-                <div className="stat-desc lg:text-xl font-bold">
-                  {sum.summary}
-                </div>
+    <Fade up>
+      <div className="px-5 py-20">
+        <h2 className="font-bold text-center text-3xl lg:text-6xl py-3 text-[#000]">
+          Business Summary
+        </h2>
+        <div className="flex flex-col lg:flex-row justify-center items-center p-10">
+          {summary.map((sum) => (
+            <Zoom>
+              <div className="rounded-md p-10 flex flex-col justify-center items-center w-80 m-5 bg-[#FEBF04]">
+                <h1 className="text-6xl">{sum.icon}</h1>
+                <h3 className="font-bold">{sum.summary}</h3>
               </div>
-            ))}
-          </div>
+            </Zoom>
+          ))}
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

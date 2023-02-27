@@ -35,7 +35,7 @@ function App() {
     }, 3000);
   }, []);
   return (
-    <div className="text-secondary">
+    <div className="">
       {loading ? (
         <div
           style={{
@@ -125,3 +125,4 @@ export default App;
 // primary: #FFC001
 // Secondary: #FF7400
 // Accent: #FF0000
+// http://localhost:4000/
