@@ -36,7 +36,7 @@ const MakeAdmin = () => {
   }
   return (
     <div>
-      <h2 className="text-xl font-bold my-5">Users</h2>
+      <h2 className="text-xl font-bold my-10">Users</h2>
       <div>
         <Table>
           <Thead>

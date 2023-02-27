@@ -19,7 +19,7 @@ const ManageOrder = () => {
   }, [allOrders]);
   return (
     <div>
-      <h2 className="text-xl font-bold my-5">
+      <h2 className="text-xl font-bold my-10">
         Manage Orders: {allOrders.length}
       </h2>
       <div>
