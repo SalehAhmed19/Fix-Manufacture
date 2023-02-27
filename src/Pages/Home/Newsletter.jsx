@@ -1,6 +1,11 @@
 import { TextField } from "@mui/material";
 import React from "react";
 import Fade from "react-reveal/Fade";
+import apple from "../../assets/Logo/apple.png";
+import mi from "../../assets/Logo/mi.png";
+import samsung from "../../assets/Logo/samsung.png";
+import realme from "../../assets/Logo/realme.png";
+import oppo from "../../assets/Logo/oppo.png";
 
 const Newsletter = () => {
   return (
@@ -15,6 +20,23 @@ const Newsletter = () => {
               We carry over 250 of the world's highest quality automotive parts
             </p>
           </Fade>
+          <div className="grid grid-cols-5 gap-5 mt-20">
+            <div className="flex justify-center items-center">
+              <img className="w-14" src={apple} alt="" />
+            </div>
+            <div className="flex justify-center items-center">
+              <img className="w-14" src={mi} alt="" />
+            </div>
+            <div className="flex justify-center items-center px-2">
+              <img className="" src={samsung} alt="" />
+            </div>
+            <div className="flex justify-center items-center px-2">
+              <img className="" src={realme} alt="" />
+            </div>
+            <div className="flex justify-center items-center px-2">
+              <img className="" src={oppo} alt="" />
+            </div>
+          </div>
         </div>
         <div className="lg:w-1/2 bg-[#FEBF04] h-96 px-10 py-14">
           <Fade right>
